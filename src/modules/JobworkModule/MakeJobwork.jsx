@@ -176,9 +176,14 @@ const MakeJobwork = () => {
                   onChange={(e) => {
                     setProcessType(e.target.value);
                     setLaminationType(""); // Reset lamination type when process type changes
-                  <option value="stapLap">Stap Lap</option>
-                  <option value="overLap">Over Lap</option>
-                  <option value="patta">Patta Line</option>
+                  }}
+                >
+                  <option value="">Select process type</option>
+                  {processOptions.map(option => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
                 </select>
               </div>
 
@@ -187,12 +192,12 @@ const MakeJobwork = () => {
                   <label style={{ 
                     display: 'block', 
                     fontSize: '0.875rem', 
-                    {processType === "patta" ? "No Of Items[DOKE]" : "*No Of Items[DOKE]"}
+                    fontWeight: '500', 
                     color: '#374151', 
                     marginBottom: '0.5rem' 
                   }}>
-                    value={formData.noOfItems}
-                    onChange={(e) => handleInputChange("noOfItems", e.target.value)}
+                    Lamination Type <span style={{ color: 'red' }}>*</span>
+                  </label>
                   <select
                     style={{
                       width: '100%',
@@ -413,10 +418,11 @@ const MakeJobwork = () => {
                         color: '#374151', 
                         marginBottom: '0.25rem' 
                       }}>
-                        *No Of Sets
+                        {processType === "patta" ? "No Of Sets" : "*No Of Sets"}
                       </label>
                       <input
                         type="text"
+                        required={processType !== "patta"}
                         value={formData.noOfSets}
                         onChange={(e) => handleInputChange("noOfSets", e.target.value)}
                         style={{
@@ -439,10 +445,11 @@ const MakeJobwork = () => {
                         color: '#374151', 
                         marginBottom: '0.25rem' 
                       }}>
-                        *No Of Items[DOKE]
+                        {processType === "patta" ? "No Of Items[DOKE]" : "*No Of Items[DOKE]"}
                       </label>
                       <input
                         type="text"
+                        required={processType !== "patta"}
                         value={formData.noOfItems}
                         onChange={(e) => handleInputChange("noOfItems", e.target.value)}
                         style={{
@@ -752,18 +759,16 @@ const MakeJobwork = () => {
                   padding: '1rem', 
                   backgroundColor: '#f9fafb', 
                   borderRadius: '6px' 
-                      {processType === "patta" ? "No Of Sets" : "*No Of Sets"}
+                }}>
                   <label style={{ display: 'flex', alignItems: 'center' }}>
                     <input
-                      required={processType !== "patta"}
                       type="checkbox"
                       checked={formData.sendToInProcessQc}
                       onChange={(e) => handleInputChange("sendToInProcessQc", e.target.checked)}
                       style={{ 
                         marginRight: '0.75rem', 
                         height: '1.25rem', 
-                        width: '1.25rem' ,
-                          color: '#374151'
+                        width: '1.25rem'
                       }}
                     />
                     <span style={{ color: '#374151', fontWeight: '500' }}>Send To In Process QC</span>
@@ -804,36 +809,15 @@ const MakeJobwork = () => {
                     }}
                   >
                     Continue
-                    <option value="lamination">Lamination</option>
-                    <option value="reactor">Reactor</option>
-                    <option value="patta">Patta Line</option>
-                  </select>
+                  </button>
                 </div>
+              </div>
+            </form>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
 
-                {processType === "lamination" && (
-                  <div style={{ marginBottom: '1.5rem' }}>
-                    <label style={{ 
-                      display: 'block', 
-                      fontSize: '0.875rem', 
-                      fontWeight: '500', 
-                      color: '#374151', 
-                      marginBottom: '0.5rem' 
-                    }}>
-                      Lamination Type <span style={{ color: 'red' }}>*</span>
-                    </label>
-                    <select
-                      style={{
-                        width: '100%',
-                        padding: '0.75rem',
-                        color: '#374151',
-                        border: '1px solid #d1d5db',
-                        borderRadius: '6px',
-                        fontSize: '0.875rem',
-                        outline: 'none'
-                      }}
-                      value={laminationType}
-                      onChange={(e) => setLaminationType(e.target.value)}
-                    >
-                      <option value="">Select lamination type</option>
-                      <option value="stapLap">Stap Lap</option>
-                      <option value="overLap">Over Lap</option>
+export default MakeJobwork;
