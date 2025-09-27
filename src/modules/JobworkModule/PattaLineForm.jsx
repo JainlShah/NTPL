@@ -141,15 +141,7 @@ const PattaLineForm = ({ formData, onBack, onSubmit }) => {
                     }}>
                       Stack
                     </th>
-                    <th style={{ 
-                      padding: '0.75rem', 
-                      border: '1px solid #d1d5db',
-                      fontWeight: 'bold',
-                      color: 'white',
-                      fontSize: '0.875rem'
-                    }}>
-                      Actions
-                    </th>
+                    
                   </tr>
                 </thead>
                 <tbody>
@@ -244,29 +236,7 @@ const PattaLineForm = ({ formData, onBack, onSubmit }) => {
                           placeholder="Enter stack"
                         />
                       </td>
-                      <td style={{ 
-                        padding: '0.5rem', 
-                        border: '1px solid #d1d5db',
-                        textAlign: 'center'
-                      }}>
-                        {pattaLineData.length > 1 && (
-                          <button
-                            type="button"
-                            onClick={() => handleRemoveRow(index)}
-                            style={{
-                              padding: '0.25rem 0.5rem',
-                              backgroundColor: '#dc2626',
-                              color: 'white',
-                              border: 'none',
-                              borderRadius: '4px',
-                              cursor: 'pointer',
-                              fontSize: '0.75rem'
-                            }}
-                          >
-                            Remove
-                          </button>
-                        )}
-                      </td>
+                    
                     </tr>
                   ))}
                 </tbody>
