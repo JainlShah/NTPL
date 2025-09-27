@@ -7,14 +7,14 @@ const MakeJobwork = () => {
   const [formData, setFormData] = useState({
     natureOfJob: "overLap",
     jobType: "newJob",
-    drawingNo: "E1.315X (C-5555)",
+    drawingNo: "ET-2126X (C-5958)",
     stackingFactor: "97",
     companyName: "",
     poNo: "",
-    workOrderNo: "",
+    workOrderNo: "WO/01/08/12366",
     poDate: "",
-    materialThickness: "0.255",
-    materialGrade: "",
+    materialThickness: "0.295",
+    materialGrade: "30CG120",
     noOfSets: "1",
     customerWorkOrderNo: "",
     noOfItems: "11",
@@ -24,7 +24,7 @@ const MakeJobwork = () => {
     stepUnit: "",
     customerItemCode: "",
     customerReqDispatchDate: "",
-    sendToInProcessQc: false
+    sendToInProcessQc: true
   });
 
   const processOptions = [
@@ -65,11 +65,16 @@ const MakeJobwork = () => {
     console.log("Form submitted:", formData);
   };
 
+  const canProceed = () => {
+    if (processType === "lamination") {
+      return laminationType !== "";
+    }
+    return processType === "reactor" || processType === "patta";
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 py-8">
-      {/* Main Content Area */}
       <div className="container mx-auto px-4">
-        {/* Page Header */}
         <div className="mb-8">
           <h1 className="text-2xl font-bold text-gray-800">
             {showForm ? "Make New Jobwork" : "Create New Jobwork"}
@@ -83,10 +88,8 @@ const MakeJobwork = () => {
         </div>
 
         {!showForm ? (
-          /* Process Selection Screen */
           <div className="max-w-2xl mx-auto">
             <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6">
-              {/* Process Selection */}
               <div className="mb-6">
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Process Type <span className="text-red-500">*</span>
@@ -94,7 +97,10 @@ const MakeJobwork = () => {
                 <select
                   className="w-full px-3 py-2 text-gray-700 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   value={processType}
-                  onChange={(e) => setProcessType(e.target.value)}
+                  onChange={(e) => {
+                    setProcessType(e.target.value);
+                    setLaminationType(""); // Reset lamination type when process type changes
+                  }}
                 >
                   <option value="" className="text-gray-500">Select a process type</option>
                   {processOptions.map(option => (
@@ -105,7 +111,6 @@ const MakeJobwork = () => {
                 </select>
               </div>
 
-              {/* Lamination Configuration */}
               {processType === "lamination" && (
                 <div className="mb-6">
                   <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -126,7 +131,6 @@ const MakeJobwork = () => {
                 </div>
               )}
 
-              {/* Action Buttons */}
               <div className="flex justify-end space-x-3 mt-8 pt-6 border-t border-gray-200">
                 <button 
                   className="px-6 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 transition-colors"
@@ -138,8 +142,7 @@ const MakeJobwork = () => {
                   Cancel
                 </button>
                 
-                {(processType === "lamination" && laminationType) || 
-                 (processType === "reactor" || processType === "patta") ? (
+                {canProceed() ? (
                   <button 
                     className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
                     onClick={handleNext}
@@ -157,7 +160,6 @@ const MakeJobwork = () => {
               </div>
             </div>
 
-            {/* Help Text */}
             <div className="mt-4 text-center">
               <p className="text-sm text-gray-600">
                 <span className="text-red-500">*</span> indicates required fields
@@ -165,82 +167,11 @@ const MakeJobwork = () => {
             </div>
           </div>
         ) : (
-          /* Jobwork Form */
           <div className="max-w-6xl mx-auto">
             <form onSubmit={handleSubmit}>
               <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6">
-                {/* Nature of Job and Job Type */}
-                <div className="mb-8 p-4 bg-blue-50 rounded-md">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {/* Nature of Job */}
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        *Nature of Job
-                      </label>
-                      <div className="flex space-x-6">
-                        <label className="flex items-center">
-                          <input
-                            type="radio"
-                            name="natureOfJob"
-                            value="stapLap"
-                            checked={formData.natureOfJob === "stapLap"}
-                            onChange={(e) => handleInputChange("natureOfJob", e.target.value)}
-                            className="mr-2 h-4 w-4 text-blue-600 focus:ring-blue-500"
-                          />
-                          <span className="text-gray-700">Stap Lap</span>
-                        </label>
-                        <label className="flex items-center">
-                          <input
-                            type="radio"
-                            name="natureOfJob"
-                            value="overLap"
-                            checked={formData.natureOfJob === "overLap"}
-                            onChange={(e) => handleInputChange("natureOfJob", e.target.value)}
-                            className="mr-2 h-4 w-4 text-blue-600 focus:ring-blue-500"
-                          />
-                          <span className="text-gray-700">Over Lap</span>
-                        </label>
-                      </div>
-                    </div>
-
-                    {/* Select Job Type */}
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        *Select Job Type
-                      </label>
-                      <div className="flex space-x-6">
-                        <label className="flex items-center">
-                          <input
-                            type="radio"
-                            name="jobType"
-                            value="newJob"
-                            checked={formData.jobType === "newJob"}
-                            onChange={(e) => handleInputChange("jobType", e.target.value)}
-                            className="mr-2 h-4 w-4 text-blue-600 focus:ring-blue-500"
-                          />
-                          <span className="text-gray-700">New Job</span>
-                        </label>
-                        <label className="flex items-center">
-                          <input
-                            type="radio"
-                            name="jobType"
-                            value="referenceJob"
-                            checked={formData.jobType === "referenceJob"}
-                            onChange={(e) => handleInputChange("jobType", e.target.value)}
-                            className="mr-2 h-4 w-4 text-blue-600 focus:ring-blue-500"
-                          />
-                          <span className="text-gray-700">Reference Job</span>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Form Fields Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {/* Left Column */}
                   <div className="space-y-6">
-                    {/* Drawing No */}
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
                         *Drawing No.
@@ -253,7 +184,6 @@ const MakeJobwork = () => {
                       />
                     </div>
 
-                    {/* Company Name */}
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
                         *Company Name
@@ -263,7 +193,7 @@ const MakeJobwork = () => {
                         onChange={(e) => handleInputChange("companyName", e.target.value)}
                         className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                       >
-                        <option value="" className="text-gray-500">Select Company</option>
+                        <option value="">Select Company</option>
                         {companyOptions.map(option => (
                           <option key={option.value} value={option.value} className="text-gray-700">
                             {option.label}
@@ -272,7 +202,6 @@ const MakeJobwork = () => {
                       </select>
                     </div>
 
-                    {/* Work Order No */}
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
                         *Work Order No.
@@ -281,12 +210,10 @@ const MakeJobwork = () => {
                         type="text"
                         value={formData.workOrderNo}
                         onChange={(e) => handleInputChange("workOrderNo", e.target.value)}
-                        placeholder="WO/01/08/12366"
                         className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                       />
                     </div>
 
-                    {/* Material Thickness */}
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
                         *Material Thickness
@@ -299,7 +226,6 @@ const MakeJobwork = () => {
                       />
                     </div>
 
-                    {/* No Of Sets */}
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
                         *No Of Sets
@@ -312,7 +238,6 @@ const MakeJobwork = () => {
                       />
                     </div>
 
-                    {/* No Of Items[DOKE] */}
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
                         *No Of Items[DOKE]
@@ -325,7 +250,6 @@ const MakeJobwork = () => {
                       />
                     </div>
 
-                    {/* Density */}
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
                         *Density
@@ -338,7 +262,6 @@ const MakeJobwork = () => {
                       />
                     </div>
 
-                    {/* Step Unit */}
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
                         *Step Unit
@@ -352,9 +275,7 @@ const MakeJobwork = () => {
                     </div>
                   </div>
 
-                  {/* Right Column */}
                   <div className="space-y-6">
-                    {/* Stacking Factor */}
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
                         *Stacking Factor (In %)
@@ -367,7 +288,6 @@ const MakeJobwork = () => {
                       />
                     </div>
 
-                    {/* P.O. No */}
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
                         P.O. No.
@@ -380,7 +300,6 @@ const MakeJobwork = () => {
                       />
                     </div>
 
-                    {/* P.O. Date */}
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
                         P.O. Date
@@ -393,7 +312,6 @@ const MakeJobwork = () => {
                       />
                     </div>
 
-                    {/* Material Grade */}
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
                         Material Grade
@@ -402,12 +320,10 @@ const MakeJobwork = () => {
                         type="text"
                         value={formData.materialGrade}
                         onChange={(e) => handleInputChange("materialGrade", e.target.value)}
-                        placeholder="30CG120"
                         className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                       />
                     </div>
 
-                    {/* Customer Work Order No */}
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
                         Customer Work Order No.
@@ -420,7 +336,6 @@ const MakeJobwork = () => {
                       />
                     </div>
 
-                    {/* Customer Project Name */}
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
                         Customer Project Name
@@ -433,7 +348,6 @@ const MakeJobwork = () => {
                       />
                     </div>
 
-                    {/* Customer Indent No */}
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
                         Customer Indent No.
@@ -446,7 +360,6 @@ const MakeJobwork = () => {
                       />
                     </div>
 
-                    {/* Customer Item Code */}
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
                         Customer Item Code
@@ -459,7 +372,6 @@ const MakeJobwork = () => {
                       />
                     </div>
 
-                    {/* Customer Req Dispatch Date */}
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
                         Customer Req Dispatch Date
@@ -474,7 +386,6 @@ const MakeJobwork = () => {
                   </div>
                 </div>
 
-                {/* Checkbox */}
                 <div className="mt-8 p-4 bg-gray-50 rounded-md">
                   <label className="flex items-center">
                     <input
@@ -487,7 +398,6 @@ const MakeJobwork = () => {
                   </label>
                 </div>
 
-                {/* Action Buttons */}
                 <div className="flex justify-between mt-8 pt-6 border-t border-gray-200">
                   <button 
                     type="button"
@@ -499,7 +409,7 @@ const MakeJobwork = () => {
                   
                   <button 
                     type="submit"
-                    className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
+                    className="px-8 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 transition-colors"
                   >
                     Continue
                   </button>
