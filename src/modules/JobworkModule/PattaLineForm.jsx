@@ -15,7 +15,7 @@ const PattaLineForm = ({ formData, onBack, onSubmit }) => {
       stack: ''
     }
     ));
-    setYokePlateDetails(initialRows);
+    setPattaLineData(initialRows);
   }, [formData.noOfItems]);
   const handlePattaLineChange = (index, field, value) => {
     setPattaLineData(prev => 
