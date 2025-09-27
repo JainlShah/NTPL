@@ -243,29 +243,7 @@ const PattaLineForm = ({ formData, onBack, onSubmit }) => {
               </table>
             </div>
 
-            {/* Add Row Button */}
-            <div style={{ 
-              textAlign: 'center', 
-              marginTop: '1rem' 
-            }}>
-              <button
-                type="button"
-                onClick={handleAddRow}
-                style={{
-                  padding: '0.5rem 1rem',
-                  backgroundColor: '#10b981',
-                  color: 'white',
-                  border: 'none',
-                  borderRadius: '4px',
-                  cursor: 'pointer',
-                  fontSize: '0.875rem',
-                  fontWeight: '500'
-                }}
-              >
-                Add Row
-              </button>
-            </div>
-          </div>
+            
 
           {/* Action Buttons */}
           <div style={{ 
