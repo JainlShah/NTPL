@@ -5,8 +5,6 @@ const MakeJobwork = () => {
   const [laminationType, setLaminationType] = useState("");
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({
-    natureOfJob: "overLap",
-    jobType: "newJob",
     drawingNo: "ET-2126X (C-5958)",
     stackingFactor: "97",
     companyName: "",
@@ -73,13 +71,13 @@ const MakeJobwork = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
-      <div className="container mx-auto px-4">
-        <div className="mb-8">
-          <h1 className="text-2xl font-bold text-gray-800">
+    <div style={{ minHeight: '100vh', backgroundColor: '#f8f9fa', padding: '2rem 0' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
+        <div style={{ marginBottom: '2rem', textAlign: 'center' }}>
+          <h1 style={{ fontSize: '1.875rem', fontWeight: 'bold', color: '#1f2937', marginBottom: '0.5rem' }}>
             {showForm ? "Make New Jobwork" : "Create New Jobwork"}
           </h1>
-          <p className="text-gray-600 mt-2">
+          <p style={{ color: '#6b7280', marginTop: '0.5rem' }}>
             {showForm 
               ? "*Indicates Compulsory Fields" 
               : "Select the process type to begin creating a new jobwork"
@@ -88,23 +86,43 @@ const MakeJobwork = () => {
         </div>
 
         {!showForm ? (
-          <div className="max-w-2xl mx-auto">
-            <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6">
-              <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+          <div style={{ maxWidth: '600px', margin: '0 auto' }}>
+            <div style={{ 
+              backgroundColor: 'white', 
+              borderRadius: '8px', 
+              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', 
+              border: '1px solid #e5e7eb', 
+              padding: '2rem' 
+            }}>
+              <div style={{ marginBottom: '1.5rem' }}>
+                <label style={{ 
+                  display: 'block', 
+                  fontSize: '0.875rem', 
+                  fontWeight: '500', 
+                  color: '#374151', 
+                  marginBottom: '0.5rem' 
+                }}>
                   Process Type <span className="text-red-500">*</span>
                 </label>
                 <select
-                  className="w-full px-3 py-2 text-gray-700 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  style={{
+                    width: '100%',
+                    padding: '0.75rem',
+                    color: '#374151',
+                    border: '1px solid #d1d5db',
+                    borderRadius: '6px',
+                    fontSize: '0.875rem',
+                    outline: 'none'
+                  }}
                   value={processType}
                   onChange={(e) => {
                     setProcessType(e.target.value);
                     setLaminationType(""); // Reset lamination type when process type changes
                   }}
                 >
-                  <option value="" className="text-gray-500">Select a process type</option>
+                  <option value="">Select a process type</option>
                   {processOptions.map(option => (
-                    <option key={option.value} value={option.value} className="text-gray-700">
+                    <option key={option.value} value={option.value}>
                       {option.label}
                     </option>
                   ))}
@@ -112,18 +130,32 @@ const MakeJobwork = () => {
               </div>
 
               {processType === "lamination" && (
-                <div className="mb-6">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <label style={{ 
+                    display: 'block', 
+                    fontSize: '0.875rem', 
+                    fontWeight: '500', 
+                    color: '#374151', 
+                    marginBottom: '0.5rem' 
+                  }}>
                     Lamination Type <span className="text-red-500">*</span>
                   </label>
                   <select
-                    className="w-full px-3 py-2 text-gray-700 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    style={{
+                      width: '100%',
+                      padding: '0.75rem',
+                      color: '#374151',
+                      border: '1px solid #d1d5db',
+                      borderRadius: '6px',
+                      fontSize: '0.875rem',
+                      outline: 'none'
+                    }}
                     value={laminationType}
                     onChange={(e) => setLaminationType(e.target.value)}
                   >
-                    <option value="" className="text-gray-500">Select lamination type</option>
+                    <option value="">Select lamination type</option>
                     {laminationOptions.map(option => (
-                      <option key={option.value} value={option.value} className="text-gray-700">
+                      <option key={option.value} value={option.value}>
                         {option.label}
                       </option>
                     ))}
@@ -131,9 +163,23 @@ const MakeJobwork = () => {
                 </div>
               )}
 
-              <div className="flex justify-end space-x-3 mt-8 pt-6 border-t border-gray-200">
+              <div style={{ 
+                display: 'flex', 
+                justifyContent: 'flex-end', 
+                gap: '0.75rem', 
+                marginTop: '2rem', 
+                paddingTop: '1.5rem', 
+                borderTop: '1px solid #e5e7eb' 
+              }}>
                 <button 
-                  className="px-6 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 transition-colors"
+                  style={{
+                    padding: '0.5rem 1.5rem',
+                    border: '1px solid #d1d5db',
+                    borderRadius: '6px',
+                    color: '#374151',
+                    backgroundColor: 'white',
+                    cursor: 'pointer'
+                  }}
                   onClick={() => {
                     setProcessType("");
                     setLaminationType("");
@@ -144,14 +190,28 @@ const MakeJobwork = () => {
                 
                 {canProceed() ? (
                   <button 
-                    className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
+                    style={{
+                      padding: '0.5rem 1.5rem',
+                      backgroundColor: '#2563eb',
+                      color: 'white',
+                      border: 'none',
+                      borderRadius: '6px',
+                      cursor: 'pointer'
+                    }}
                     onClick={handleNext}
                   >
                     Next
                   </button>
                 ) : (
                   <button 
-                    className="px-6 py-2 bg-gray-300 text-gray-500 rounded-md cursor-not-allowed"
+                    style={{
+                      padding: '0.5rem 1.5rem',
+                      backgroundColor: '#d1d5db',
+                      color: '#9ca3af',
+                      border: 'none',
+                      borderRadius: '6px',
+                      cursor: 'not-allowed'
+                    }}
                     disabled
                   >
                     Next
@@ -160,42 +220,78 @@ const MakeJobwork = () => {
               </div>
             </div>
 
-            <div className="mt-4 text-center">
-              <p className="text-sm text-gray-600">
+            <div style={{ marginTop: '1rem', textAlign: 'center' }}>
+              <p style={{ fontSize: '0.875rem', color: '#6b7280' }}>
                 <span className="text-red-500">*</span> indicates required fields
               </p>
             </div>
           </div>
         ) : (
-          <div className="max-w-6xl mx-auto">
+          <div style={{ maxWidth: '900px', margin: '0 auto' }}>
             <form onSubmit={handleSubmit}>
-              <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="space-y-6">
+              <div style={{ 
+                backgroundColor: 'white', 
+                borderRadius: '8px', 
+                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', 
+                border: '1px solid #e5e7eb', 
+                padding: '2rem' 
+              }}>
+                <div style={{ 
+                  display: 'grid', 
+                  gridTemplateColumns: 'repeat(2, 1fr)', 
+                  gap: '2rem' 
+                }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label style={{ 
+                        display: 'block', 
+                        fontSize: '0.875rem', 
+                        fontWeight: '500', 
+                        color: '#374151', 
+                        marginBottom: '0.25rem' 
+                      }}>
                         *Drawing No.
                       </label>
                       <input
                         type="text"
                         value={formData.drawingNo}
                         onChange={(e) => handleInputChange("drawingNo", e.target.value)}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        style={{
+                          width: '100%',
+                          padding: '0.5rem 0.75rem',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '0.875rem',
+                          outline: 'none'
+                        }}
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label style={{ 
+                        display: 'block', 
+                        fontSize: '0.875rem', 
+                        fontWeight: '500', 
+                        color: '#374151', 
+                        marginBottom: '0.25rem' 
+                      }}>
                         *Company Name
                       </label>
                       <select
                         value={formData.companyName}
                         onChange={(e) => handleInputChange("companyName", e.target.value)}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        style={{
+                          width: '100%',
+                          padding: '0.5rem 0.75rem',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '0.875rem',
+                          outline: 'none'
+                        }}
                       >
                         <option value="">Select Company</option>
                         {companyOptions.map(option => (
-                          <option key={option.value} value={option.value} className="text-gray-700">
+                          <option key={option.value} value={option.value}>
                             {option.label}
                           </option>
                         ))}
@@ -203,205 +299,422 @@ const MakeJobwork = () => {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label style={{ 
+                        display: 'block', 
+                        fontSize: '0.875rem', 
+                        fontWeight: '500', 
+                        color: '#374151', 
+                        marginBottom: '0.25rem' 
+                      }}>
                         *Work Order No.
                       </label>
                       <input
                         type="text"
                         value={formData.workOrderNo}
                         onChange={(e) => handleInputChange("workOrderNo", e.target.value)}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        style={{
+                          width: '100%',
+                          padding: '0.5rem 0.75rem',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '0.875rem',
+                          outline: 'none'
+                        }}
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label style={{ 
+                        display: 'block', 
+                        fontSize: '0.875rem', 
+                        fontWeight: '500', 
+                        color: '#374151', 
+                        marginBottom: '0.25rem' 
+                      }}>
                         *Material Thickness
                       </label>
                       <input
                         type="text"
                         value={formData.materialThickness}
                         onChange={(e) => handleInputChange("materialThickness", e.target.value)}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        style={{
+                          width: '100%',
+                          padding: '0.5rem 0.75rem',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '0.875rem',
+                          outline: 'none'
+                        }}
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label style={{ 
+                        display: 'block', 
+                        fontSize: '0.875rem', 
+                        fontWeight: '500', 
+                        color: '#374151', 
+                        marginBottom: '0.25rem' 
+                      }}>
                         *No Of Sets
                       </label>
                       <input
                         type="text"
                         value={formData.noOfSets}
                         onChange={(e) => handleInputChange("noOfSets", e.target.value)}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        style={{
+                          width: '100%',
+                          padding: '0.5rem 0.75rem',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '0.875rem',
+                          outline: 'none'
+                        }}
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label style={{ 
+                        display: 'block', 
+                        fontSize: '0.875rem', 
+                        fontWeight: '500', 
+                        color: '#374151', 
+                        marginBottom: '0.25rem' 
+                      }}>
                         *No Of Items[DOKE]
                       </label>
                       <input
                         type="text"
                         value={formData.noOfItems}
                         onChange={(e) => handleInputChange("noOfItems", e.target.value)}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        style={{
+                          width: '100%',
+                          padding: '0.5rem 0.75rem',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '0.875rem',
+                          outline: 'none'
+                        }}
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label style={{ 
+                        display: 'block', 
+                        fontSize: '0.875rem', 
+                        fontWeight: '500', 
+                        color: '#374151', 
+                        marginBottom: '0.25rem' 
+                      }}>
                         *Density
                       </label>
                       <input
                         type="text"
                         value={formData.density}
                         onChange={(e) => handleInputChange("density", e.target.value)}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        style={{
+                          width: '100%',
+                          padding: '0.5rem 0.75rem',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '0.875rem',
+                          outline: 'none'
+                        }}
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label style={{ 
+                        display: 'block', 
+                        fontSize: '0.875rem', 
+                        fontWeight: '500', 
+                        color: '#374151', 
+                        marginBottom: '0.25rem' 
+                      }}>
                         *Step Unit
                       </label>
                       <input
                         type="text"
                         value={formData.stepUnit}
                         onChange={(e) => handleInputChange("stepUnit", e.target.value)}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        style={{
+                          width: '100%',
+                          padding: '0.5rem 0.75rem',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '0.875rem',
+                          outline: 'none'
+                        }}
                       />
                     </div>
                   </div>
 
-                  <div className="space-y-6">
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label style={{ 
+                        display: 'block', 
+                        fontSize: '0.875rem', 
+                        fontWeight: '500', 
+                        color: '#374151', 
+                        marginBottom: '0.25rem' 
+                      }}>
                         *Stacking Factor (In %)
                       </label>
                       <input
                         type="text"
                         value={formData.stackingFactor}
                         onChange={(e) => handleInputChange("stackingFactor", e.target.value)}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        style={{
+                          width: '100%',
+                          padding: '0.5rem 0.75rem',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '0.875rem',
+                          outline: 'none'
+                        }}
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label style={{ 
+                        display: 'block', 
+                        fontSize: '0.875rem', 
+                        fontWeight: '500', 
+                        color: '#374151', 
+                        marginBottom: '0.25rem' 
+                      }}>
                         P.O. No.
                       </label>
                       <input
                         type="text"
                         value={formData.poNo}
                         onChange={(e) => handleInputChange("poNo", e.target.value)}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        style={{
+                          width: '100%',
+                          padding: '0.5rem 0.75rem',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '0.875rem',
+                          outline: 'none'
+                        }}
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label style={{ 
+                        display: 'block', 
+                        fontSize: '0.875rem', 
+                        fontWeight: '500', 
+                        color: '#374151', 
+                        marginBottom: '0.25rem' 
+                      }}>
                         P.O. Date
                       </label>
                       <input
                         type="date"
                         value={formData.poDate}
                         onChange={(e) => handleInputChange("poDate", e.target.value)}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        style={{
+                          width: '100%',
+                          padding: '0.5rem 0.75rem',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '0.875rem',
+                          outline: 'none'
+                        }}
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label style={{ 
+                        display: 'block', 
+                        fontSize: '0.875rem', 
+                        fontWeight: '500', 
+                        color: '#374151', 
+                        marginBottom: '0.25rem' 
+                      }}>
                         Material Grade
                       </label>
                       <input
                         type="text"
                         value={formData.materialGrade}
                         onChange={(e) => handleInputChange("materialGrade", e.target.value)}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        style={{
+                          width: '100%',
+                          padding: '0.5rem 0.75rem',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '0.875rem',
+                          outline: 'none'
+                        }}
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label style={{ 
+                        display: 'block', 
+                        fontSize: '0.875rem', 
+                        fontWeight: '500', 
+                        color: '#374151', 
+                        marginBottom: '0.25rem' 
+                      }}>
                         Customer Work Order No.
                       </label>
                       <input
                         type="text"
                         value={formData.customerWorkOrderNo}
                         onChange={(e) => handleInputChange("customerWorkOrderNo", e.target.value)}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        style={{
+                          width: '100%',
+                          padding: '0.5rem 0.75rem',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '0.875rem',
+                          outline: 'none'
+                        }}
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label style={{ 
+                        display: 'block', 
+                        fontSize: '0.875rem', 
+                        fontWeight: '500', 
+                        color: '#374151', 
+                        marginBottom: '0.25rem' 
+                      }}>
                         Customer Project Name
                       </label>
                       <input
                         type="text"
                         value={formData.customerProjectName}
                         onChange={(e) => handleInputChange("customerProjectName", e.target.value)}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        style={{
+                          width: '100%',
+                          padding: '0.5rem 0.75rem',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '0.875rem',
+                          outline: 'none'
+                        }}
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label style={{ 
+                        display: 'block', 
+                        fontSize: '0.875rem', 
+                        fontWeight: '500', 
+                        color: '#374151', 
+                        marginBottom: '0.25rem' 
+                      }}>
                         Customer Indent No.
                       </label>
                       <input
                         type="text"
                         value={formData.customerIndentNo}
                         onChange={(e) => handleInputChange("customerIndentNo", e.target.value)}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        style={{
+                          width: '100%',
+                          padding: '0.5rem 0.75rem',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '0.875rem',
+                          outline: 'none'
+                        }}
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label style={{ 
+                        display: 'block', 
+                        fontSize: '0.875rem', 
+                        fontWeight: '500', 
+                        color: '#374151', 
+                        marginBottom: '0.25rem' 
+                      }}>
                         Customer Item Code
                       </label>
                       <input
                         type="text"
                         value={formData.customerItemCode}
                         onChange={(e) => handleInputChange("customerItemCode", e.target.value)}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        style={{
+                          width: '100%',
+                          padding: '0.5rem 0.75rem',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '0.875rem',
+                          outline: 'none'
+                        }}
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label style={{ 
+                        display: 'block', 
+                        fontSize: '0.875rem', 
+                        fontWeight: '500', 
+                        color: '#374151', 
+                        marginBottom: '0.25rem' 
+                      }}>
                         Customer Req Dispatch Date
                       </label>
                       <input
                         type="date"
                         value={formData.customerReqDispatchDate}
                         onChange={(e) => handleInputChange("customerReqDispatchDate", e.target.value)}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        style={{
+                          width: '100%',
+                          padding: '0.5rem 0.75rem',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '0.875rem',
+                          outline: 'none'
+                        }}
                       />
                     </div>
                   </div>
                 </div>
 
-                <div className="mt-8 p-4 bg-gray-50 rounded-md">
-                  <label className="flex items-center">
+                <div style={{ 
+                  marginTop: '2rem', 
+                  padding: '1rem', 
+                  backgroundColor: '#f9fafb', 
+                  borderRadius: '6px' 
+                }}>
+                  <label style={{ display: 'flex', alignItems: 'center' }}>
                     <input
                       type="checkbox"
                       checked={formData.sendToInProcessQc}
                       onChange={(e) => handleInputChange("sendToInProcessQc", e.target.checked)}
-                      className="mr-3 h-5 w-5 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                      style={{ 
+                        marginRight: '0.75rem', 
+                        height: '1.25rem', 
+                        width: '1.25rem' 
+                      }}
                     />
-                    <span className="text-gray-700 font-medium">Send To In Process QC</span>
+                    <span style={{ color: '#374151', fontWeight: '500' }}>Send To In Process QC</span>
                   </label>
                 </div>
 
-                <div className="flex justify-between mt-8 pt-6 border-t border-gray-200">
+                <div style={{ 
+                  display: 'flex', 
+                  justifyContent: 'space-between', 
+                  marginTop: '2rem', 
+                  paddingTop: '1.5rem', 
+                  borderTop: '1px solid #e5e7eb' 
+                }}>
                   <button 
                     type="button"
-                    className="px-6 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 transition-colors"
+                    style={{
+                      padding: '0.5rem 1.5rem',
+                      border: '1px solid #d1d5db',
+                      borderRadius: '6px',
+                      color: '#374151',
+                      backgroundColor: 'white',
+                      cursor: 'pointer'
+                    }}
                     onClick={handleBack}
                   >
                     Back
@@ -409,7 +722,14 @@ const MakeJobwork = () => {
                   
                   <button 
                     type="submit"
-                    className="px-8 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 transition-colors"
+                    style={{
+                      padding: '0.5rem 2rem',
+                      backgroundColor: '#4b5563',
+                      color: 'white',
+                      border: 'none',
+                      borderRadius: '6px',
+                      cursor: 'pointer'
+                    }}
                   >
                     Continue
                   </button>
