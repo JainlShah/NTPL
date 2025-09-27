@@ -1,5 +1,5 @@
 import React from "react";
-import "./JobReportTable.css";
+import "./jobreporttable.css";
 
 const JobReportTable = ({ rolls = [], onRowClick }) => {
   return (

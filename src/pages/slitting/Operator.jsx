@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import GenericTable from "../../components/genericTable";
-import "../../styles/slitting.css";
+import "../../styles/Slitting.css";
 import OperatorSlittingDetails from "./OperatorSlittingDetails";
 import SlittingTable from "./SlittingTable";
 

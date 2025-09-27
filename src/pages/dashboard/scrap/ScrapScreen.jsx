@@ -10,7 +10,7 @@ import toast from "react-hot-toast";
 import ScrapByThickness from "./ScrapByThickness";
 import ScrapByType from "./ScrapByType";
 import GenericTable from "../../../components/genericTable";
-import ScrapByRoll from "./scrapByRoll";
+import ScrapByRoll from "./ScrapByRoll";
 
 const ScrapScreen = () => {
   const [isDetailsVisible, setDetailsVisible] = useState(false);

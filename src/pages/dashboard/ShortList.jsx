@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import useShortlist from "../../hooks/useShortlist.jsx";
 import GenericTable from "../../components/genericTable.jsx";
-import "../../styles/ShortList.css";
+import "../../styles/Shortlist.css";
 import { ClipLoader } from "react-spinners";
 import CommonError from "../../components/error/CommonError.jsx";
 import { useNavigate } from "react-router-dom";
