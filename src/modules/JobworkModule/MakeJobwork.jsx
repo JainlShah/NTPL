@@ -287,7 +287,8 @@ const MakeJobwork = () => {
                           border: '1px solid #d1d5db',
                           borderRadius: '4px',
                           fontSize: '0.875rem',
-                          outline: 'none'
+                          outline: 'none',
+                          color: '#374151'
                         }}
                       >
                         <option value="">Select Company</option>
@@ -319,7 +320,8 @@ const MakeJobwork = () => {
                           border: '1px solid #d1d5db',
                           borderRadius: '4px',
                           fontSize: '0.875rem',
-                          outline: 'none'
+                          outline: 'none',
+                          color: '#374151'
                         }}
                       />
                     </div>
@@ -344,7 +346,8 @@ const MakeJobwork = () => {
                           border: '1px solid #d1d5db',
                           borderRadius: '4px',
                           fontSize: '0.875rem',
-                          outline: 'none'
+                          outline: 'none',
+                          color: '#374151'
                         }}
                       />
                     </div>
@@ -369,7 +372,8 @@ const MakeJobwork = () => {
                           border: '1px solid #d1d5db',
                           borderRadius: '4px',
                           fontSize: '0.875rem',
-                          outline: 'none'
+                          outline: 'none',
+                          color: '#374151'
                         }}
                       />
                     </div>
@@ -394,7 +398,8 @@ const MakeJobwork = () => {
                           border: '1px solid #d1d5db',
                           borderRadius: '4px',
                           fontSize: '0.875rem',
-                          outline: 'none'
+                          outline: 'none',
+                          color: '#374151'
                         }}
                       />
                     </div>
@@ -419,7 +424,8 @@ const MakeJobwork = () => {
                           border: '1px solid #d1d5db',
                           borderRadius: '4px',
                           fontSize: '0.875rem',
-                          outline: 'none'
+                          outline: 'none',
+                          color: '#374151'
                         }}
                       />
                     </div>
@@ -444,7 +450,8 @@ const MakeJobwork = () => {
                           border: '1px solid #d1d5db',
                           borderRadius: '4px',
                           fontSize: '0.875rem',
-                          outline: 'none'
+                          outline: 'none',
+                          color: '#374151'
                         }}
                       />
                     </div>
@@ -471,7 +478,8 @@ const MakeJobwork = () => {
                           border: '1px solid #d1d5db',
                           borderRadius: '4px',
                           fontSize: '0.875rem',
-                          outline: 'none'
+                          outline: 'none',
+                          color: '#374151'
                         }}
                       />
                     </div>
@@ -496,7 +504,8 @@ const MakeJobwork = () => {
                           border: '1px solid #d1d5db',
                           borderRadius: '4px',
                           fontSize: '0.875rem',
-                          outline: 'none'
+                          outline: 'none',
+                          color: '#374151'
                         }}
                       />
                     </div>
@@ -521,7 +530,8 @@ const MakeJobwork = () => {
                           border: '1px solid #d1d5db',
                           borderRadius: '4px',
                           fontSize: '0.875rem',
-                          outline: 'none'
+                          outline: 'none',
+                          color: '#374151'
                         }}
                       />
                     </div>
@@ -546,7 +556,8 @@ const MakeJobwork = () => {
                           border: '1px solid #d1d5db',
                           borderRadius: '4px',
                           fontSize: '0.875rem',
-                          outline: 'none'
+                          outline: 'none',
+                          color: '#374151'
                         }}
                       />
                     </div>
@@ -571,7 +582,8 @@ const MakeJobwork = () => {
                           border: '1px solid #d1d5db',
                           borderRadius: '4px',
                           fontSize: '0.875rem',
-                          outline: 'none'
+                          outline: 'none',
+                          color: '#374151'
                         }}
                       />
                     </div>
@@ -596,7 +608,8 @@ const MakeJobwork = () => {
                           border: '1px solid #d1d5db',
                           borderRadius: '4px',
                           fontSize: '0.875rem',
-                          outline: 'none'
+                          outline: 'none',
+                          color: '#374151'
                         }}
                       />
                     </div>
@@ -621,7 +634,8 @@ const MakeJobwork = () => {
                           border: '1px solid #d1d5db',
                           borderRadius: '4px',
                           fontSize: '0.875rem',
-                          outline: 'none'
+                          outline: 'none',
+                          color: '#374151'
                         }}
                       />
                     </div>
@@ -646,7 +660,8 @@ const MakeJobwork = () => {
                           border: '1px solid #d1d5db',
                           borderRadius: '4px',
                           fontSize: '0.875rem',
-                          outline: 'none'
+                          outline: 'none',
+                          color: '#374151'
                         }}
                       />
                     </div>
@@ -671,7 +686,8 @@ const MakeJobwork = () => {
                           border: '1px solid #d1d5db',
                           borderRadius: '4px',
                           fontSize: '0.875rem',
-                          outline: 'none'
+                          outline: 'none',
+                          color: '#374151'
                         }}
                       />
                     </div>
@@ -692,7 +708,8 @@ const MakeJobwork = () => {
                       style={{ 
                         marginRight: '0.75rem', 
                         height: '1.25rem', 
-                        width: '1.25rem' 
+                        width: '1.25rem' ,
+                          color: '#374151'
                       }}
                     />
                     <span style={{ color: '#374151', fontWeight: '500' }}>Send To In Process QC</span>
