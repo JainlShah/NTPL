@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import StapLapForm from './StapLapForm';
 import OverLapForm from './OverLapForm';
+import PattaLineForm from './PattaLineForm';
 
 const MakeJobwork = () => {
   const [processType, setProcessType] = useState("");
   const [laminationType, setLaminationType] = useState("");
   const [showForm, setShowForm] = useState(false);
   const [showLaminationForm, setShowLaminationForm] = useState(false);
+  const [showPattaLineForm, setShowPattaLineForm] = useState(false);
   const [formData, setFormData] = useState({
     drawingNo: "ET-2126X (C-5958)",
     stackingFactor: "97",
@@ -63,7 +65,13 @@ const MakeJobwork = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setShowForm(false);
-    setShowLaminationForm(true);
+    
+    if (processType === "lamination") {
+      setShowLaminationForm(true);
+    } else if (processType === "patta") {
+      setShowPattaLineForm(true);
+    }
+    // For reactor, we can add another form later if needed
   };
 
   const handleLaminationSubmit = (laminationData) => {
@@ -71,8 +79,13 @@ const MakeJobwork = () => {
     // Handle final form submission logic here
   };
 
+  const handlePattaLineSubmit = (pattaData) => {
+    console.log("Patta Line submission:", pattaData);
+    // Handle patta line form submission logic here
+  };
   const handleBackToForm = () => {
     setShowLaminationForm(false);
+    setShowPattaLineForm(false);
     setShowForm(true);
   };
 
@@ -82,6 +95,17 @@ const MakeJobwork = () => {
     }
     return processType === "reactor" || processType === "patta";
   };
+
+  // Show Patta Line form
+  if (showPattaLineForm && processType === "patta") {
+    return (
+      <PattaLineForm 
+        formData={formData}
+        onBack={handleBackToForm}
+        onSubmit={handlePattaLineSubmit}
+      />
+    );
+  }
 
   // Show lamination-specific forms
   if (showLaminationForm && processType === "lamination") {
@@ -152,14 +176,9 @@ const MakeJobwork = () => {
                   onChange={(e) => {
                     setProcessType(e.target.value);
                     setLaminationType(""); // Reset lamination type when process type changes
-                  }}
-                >
-                  <option value="">Select a process type</option>
-                  {processOptions.map(option => (
-                    <option key={option.value} value={option.value}>
-                      {option.label}
-                    </option>
-                  ))}
+                  <option value="stapLap">Stap Lap</option>
+                  <option value="overLap">Over Lap</option>
+                  <option value="patta">Patta Line</option>
                 </select>
               </div>
 
@@ -733,9 +752,10 @@ const MakeJobwork = () => {
                   padding: '1rem', 
                   backgroundColor: '#f9fafb', 
                   borderRadius: '6px' 
-                }}>
+                      {processType === "patta" ? "No Of Sets" : "*No Of Sets"}
                   <label style={{ display: 'flex', alignItems: 'center' }}>
                     <input
+                      required={processType !== "patta"}
                       type="checkbox"
                       checked={formData.sendToInProcessQc}
                       onChange={(e) => handleInputChange("sendToInProcessQc", e.target.checked)}
