@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import GenericTable from "../../components/genericTable.jsx";
-import "../../styles/slitting.css";
+import "../../styles/Slitting.css";
 import useSlitting from "../../hooks/useSlitting.jsx";
 import CommonError from "../../components/error/CommonError.jsx";
 import animationData from "../../assets/loading.json";

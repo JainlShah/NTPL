@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import GenericTable from "../../components/genericTable";
-import "../../styles/slitting.css";
+import "../../styles/Slitting.css";
 import SlittingForm from "./Slitting-Form.jsx";
 import SlittingTable from "./SlittingTable.jsx";
 import { useRowLock } from "../../hooks/useRowLock.jsx";
