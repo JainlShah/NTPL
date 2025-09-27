@@ -262,7 +262,8 @@ const MakeJobwork = () => {
                           border: '1px solid #d1d5db',
                           borderRadius: '4px',
                           fontSize: '0.875rem',
-                          outline: 'none'
+                          outline: 'none',
+                          color: '#374151'
                         }}
                       />
                     </div>
