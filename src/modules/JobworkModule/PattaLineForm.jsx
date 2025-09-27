@@ -2,15 +2,21 @@ import React, { useState } from 'react';
 
 const PattaLineForm = ({ formData, onBack, onSubmit }) => {
   const [pattaLineData, setPattaLineData] = useState([
-    {
-      no: 1,
+    
+  ]);
+ useEffect(() => {
+    const noOfItems = parseInt(formData.noOfItems) || 11;
+    const initialRows = Array.from({ length: noOfItems }, (_, index) => (
+      {
+      no: index+ 1,
       noOfSets: '',
       length: '',
       width: '',
       stack: ''
     }
-  ]);
-
+    ));
+    setYokePlateDetails(initialRows);
+  }, [formData.noOfItems]);
   const handlePattaLineChange = (index, field, value) => {
     setPattaLineData(prev => 
       prev.map((row, i) => 
