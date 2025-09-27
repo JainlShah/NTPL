@@ -1,0 +1,33 @@
+.summary-cards {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.summary-card {
+  flex: 1;
+  min-width: 200px;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  color: white;
+}
+
+.summary-card.blue {
+  background-color: #3b82f6;
+}
+
+.summary-card.orange {
+  background-color: #f97316;
+}
+
+.summary-card p {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.summary-card h3 {
+  margin: 0.25rem 0 0;
+  font-size: 1.25rem;
+}

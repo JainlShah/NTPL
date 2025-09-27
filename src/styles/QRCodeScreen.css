@@ -1,0 +1,97 @@
+.qr-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-color: rgb(252, 246, 246);
+  border-radius: 8px;
+  border: 1px solid rgb(0, 0, 0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: 5in; /* Set width to 2 inches */
+  height: 2in; /* Set height to 4 inches */
+  page-break-inside: avoid; /* Prevents breaking a card across pages */
+}
+.left-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.qr-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1in; /* Slightly smaller than the label width */
+}
+
+.barcode-details-container {
+  color: rgb(0, 0, 0);
+  border-radius: 8px;
+  text-align: left;
+  width: 100%;
+  font-size: 12px; /* Adjust font size for small labels */
+  margin-right: 10px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 2px 0;
+}
+
+.key {
+  font-weight: bold;
+  flex: 1;
+  text-align: left;
+  font-size: 12px;
+}
+
+.value {
+  flex: 1;
+  text-align: right;
+  font-size: 12px;
+}
+@media print {
+  @page {
+    size: 2in 4in;
+    margin: 0;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .qr-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid black;
+    width: 2in;
+    height: 4in;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .qr-container {
+    width: 1.5in;
+    height: 1.5in;
+  }
+
+  .details-container {
+    width: 90%;
+    font-size: 12px;
+  }
+}
+

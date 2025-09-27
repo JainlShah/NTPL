@@ -1,0 +1,269 @@
+{
+  "responseStatusList": {
+      "statusList": [
+          {
+              "statusCode": 200,
+              "statusType": "success",
+              "statusDesc": "Coil Inventory Get successfully"
+          }
+      ]
+  },
+  "responseObject": {
+      "data": [
+          {
+              "coilNumber": "IC/20/1234",
+              "grade": "30050",
+              "thickness": 600,
+              "weight": 500,
+              "MTC1_5T": 1500,
+              "MTC1_7T": 1700,
+              "width": 1200,
+              "materialType": "CRGO",
+              "registeredDate": "2023-10-01",
+              "status": "ready",
+              "qrCode": "QR1234",
+              "uploadedFiles": [
+                  {
+                      "filename": "sample-logo.png",
+                      "size": "4500",
+                      "filetype": "image/png"
+                  }
+              ]
+          },
+          {
+              "coilNumber": "IC/21/5678",
+              "grade": "40075",
+              "thickness": 700,
+              "weight": 600,
+              "MTC1_5T": 1750,
+              "MTC1_7T": 1950,
+              "width": 1300,
+              "registeredDate": "2023-10-02",
+              "status": "Transfered",
+              "qrCode": "QR5678",
+              "uploadedFiles": [
+                  {
+                      "filename": "company-logo.jpg",
+                      "size": "5200",
+                      "filetype": "image/jpeg"
+                  }
+              ]
+          },
+          {
+              "coilNumber": "IC/22/9876",
+              "grade": "50085",
+              "thickness": 800,
+              "weight": 700,
+              "MTC1_5T": 1850,
+              "MTC1_7T": 2100,
+              "width": 1400,
+              "registeredDate": "2023-10-03",
+              "status": "ready",
+              "qrCode": "QR9876",
+              "uploadedFiles": [
+                  {
+                      "filename": "brand-logo.svg",
+                      "size": "4800",
+                      "filetype": "image/svg+xml"
+                  }
+              ]
+          },
+          {
+              "coilNumber": "IC/23/5432",
+              "grade": "25090",
+              "thickness": 550,
+              "weight": 450,
+              "MTC1_5T": 1200,
+              "MTC1_7T": 1450,
+              "width": 1100,
+              "registeredDate": "2023-10-04",
+              "status": "Blocked",
+              "qrCode": "QR5432",
+              "uploadedFiles": [
+                  {
+                      "filename": "test-logo.gif",
+                      "size": "3000",
+                      "filetype": "image/gif"
+                  }
+              ]
+          },
+          {
+              "coilNumber": "IC/24/6543",
+              "grade": "60095",
+              "thickness": 900,
+              "weight": 800,
+              "MTC1_5T": 2200,
+              "MTC1_7T": 2400,
+              "width": 1500,
+              "registeredDate": "2023-10-05",
+              "status": "ready",
+              "qrCode": "QR6543",
+              "uploadedFiles": [
+                  {
+                      "filename": "example-logo.bmp",
+                      "size": "3500",
+                      "filetype": "image/bmp"
+                  }
+              ]
+          },
+          {
+              "coilNumber": "IC/25/7654",
+              "grade": "70085",
+              "thickness": 750,
+              "weight": 900,
+              "MTC1_5T": 1900,
+              "MTC1_7T": 2300,
+              "width": 1350,
+              "registeredDate": "2023-10-06",
+              "status": "Blocked",
+              "qrCode": "QR7654",
+              "uploadedFiles": [
+                  {
+                      "filename": "coil-logo.png",
+                      "size": "4000",
+                      "filetype": "image/png"
+                  }
+              ]
+          },
+          {
+              "coilNumber": "IC/26/8765",
+              "grade": "80090",
+              "thickness": 850,
+              "weight": 950,
+              "MTC1_5T": 2000,
+              "MTC1_7T": 2500,
+              "width": 1450,
+              "registeredDate": "2023-10-07",
+              "status": "ready",
+              "qrCode": "QR8765",
+              "uploadedFiles": [
+                  {
+                      "filename": "coil-image.jpg",
+                      "size": "5000",
+                      "filetype": "image/jpeg"
+                  }
+              ]
+          },
+          {
+              "coilNumber": "IC/27/9875",
+              "grade": "90095",
+              "thickness": 950,
+              "weight": 1000,
+              "MTC1_5T": 2100,
+              "MTC1_7T": 2600,
+              "width": 1550,
+              "registeredDate": "2023-10-08",
+              "status": "block",
+              "qrCode": "QR9875",
+              "uploadedFiles": [
+                  {
+                      "filename": "coil-design.svg",
+                      "size": "4800",
+                      "filetype": "image/svg+xml"
+                  }
+              ]
+          },
+          {
+              "coilNumber": "IC/28/6547",
+              "grade": "100095",
+              "thickness": 1050,
+              "weight": 1100,
+              "MTC1_5T": 2300,
+              "MTC1_7T": 2800,
+              "width": 1650,
+              "registeredDate": "2023-10-09",
+              "status": "ready",
+              "qrCode": "QR6547",
+              "uploadedFiles": [
+                  {
+                      "filename": "design-logo.bmp",
+                      "size": "3200",
+                      "filetype": "image/bmp"
+                  }
+              ]
+          },
+          {
+              "coilNumber": "IC/29/3245",
+              "grade": "110095",
+              "thickness": 1150,
+              "weight": 1200,
+              "MTC1_5T": 2500,
+              "MTC1_7T": 3000,
+              "width": 1750,
+              "registeredDate": "2023-10-10",
+              "status": "block",
+              "qrCode": "QR3245",
+              "uploadedFiles": [
+                  {
+                      "filename": "coil-image2.png",
+                      "size": "4700",
+                      "filetype": "image/png"
+                  }
+              ]
+          },
+          {
+              "coilNumber": "IC/30/8763",
+              "grade": "120095",
+              "thickness": 1250,
+              "weight": 1300,
+              "MTC1_5T": 2700,
+              "MTC1_7T": 3200,
+              "width": 1850,
+              "registeredDate": "2023-10-11",
+              "status": "ready",
+              "qrCode": "QR8763",
+              "uploadedFiles": [
+                  {
+                      "filename": "coil-data.svg",
+                      "size": "5300",
+                      "filetype": "image/svg+xml"
+                  }
+              ]
+          },
+          {
+              "coilNumber": "IC/31/5431",
+              "grade": "130095",
+              "thickness": 1350,
+              "weight": 1400,
+              "MTC1_5T": 2900,
+              "MTC1_7T": 3400,
+              "width": 1950,
+              "registeredDate": "2023-10-12",
+              "status": "block",
+              "qrCode": "QR5431",
+              "uploadedFiles": [
+                  {
+                      "filename": "coil-example.jpg",
+                      "size": "4600",
+                      "filetype": "image/jpeg"
+                  }
+              ]
+          },
+          {
+              "coilNumber": "IC/32/4321",
+              "grade": "140095",
+              "thickness": 1450,
+              "weight": 1500,
+              "MTC1_5T": 3100,
+              "MTC1_7T": 3600,
+              "width": 2050,
+              "registeredDate": "2023-10-13",
+              "status": "ready",
+              "qrCode": "QR4321",
+              "uploadedFiles": [
+                  {
+                      "filename": "coil-logo.bmp",
+                      "size": "4200",
+                      "filetype": "image/bmp"
+                  }
+              ]
+          }
+      ],
+      "pagination": {
+          "totalItems": 20,
+          "currentPage": 1,
+          "itemsPerPage": 10,
+          "totalPages": 2
+      }
+  }
+}

@@ -1,0 +1,296 @@
+/* General Scrap Screen Styles */
+.scrap-screen {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  margin: 0 20px;
+  /* Adjust margin for better responsiveness */
+  align-items: center;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.loading,
+.error,
+.no-data {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.scrap-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.scrap-body-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.scrap-tab-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Action Button Styles */
+.action-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 10px auto;
+  /* Center buttons on small screens */
+  max-width: 200px;
+  /* Prevent buttons from being too wide */
+}
+
+.action-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.action-button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+/* Popup Overlay Styles */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+
+
+/* Popup Form Styles */
+.popup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-group input {
+  padding: 10px;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #333;
+}
+
+.form-group input[readonly] {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+}
+
+/* Popup Actions */
+.popup-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .scrap-screen {
+    margin: 0 10px;
+    /* Reduce margin on smaller screens */
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .popup-container {
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+
+  .popup-form {
+    gap: 10px;
+  }
+
+  .action-button,
+  .move-button,
+  .close-button {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  .popup-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Fade In Animation for Popup */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.button-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.button-popup-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 170px;
+
+  flex-direction: column;
+  display: flex;
+}
+
+.popup-button {
+  margin: 10px;
+  padding: 10px 20px;
+  background: #ffffff;
+  color: #03396C;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+  border: 1px, solid;
+}
+
+.popup-button:hover {
+  background: #03396C;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  transform: scale(1.05);
+  color: #ffffff;
+}
+
+.popup-close {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background: #b80303;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.popup-close:hover {
+  background: #999;
+}
+
+/* scrapbythickness */
+
+.scrap-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #d9e5f4;
+  margin: 20px;
+  width: 150px;
+  height: 150px;
+  border: 1px solid #03396C;
+  border-radius: 12px;
+  cursor: pointer;
+
+}
+
+.scrap-card:hover {
+  background-color: #d9e5f470;
+  border: 1px solid #03396C;
+}
+.body-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+
+/*roll over effect*/
+.scrap-roll-container {
+
+width: 100%;
+height: 100%;
+display: flex;
+flex-direction: column;
+
+}
+@media screen and (max-width: 768px) {
+  .scrap-card {
+    width: 100px;
+    height: 100px;
+  }
+
+  .thickness-body-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .body-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  
+}

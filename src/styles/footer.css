@@ -1,0 +1,46 @@
+html, body {
+    height: 100%; /* Ensure the height spans the viewport */
+    margin: 0;    /* Remove default margins */
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Make the root container span the viewport height */
+}
+
+.footer {
+    background-color: #303030;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    margin-top: auto; /* Push the footer to the bottom */
+}
+
+.footer-link {
+    color: #fff;
+    text-decoration: none;
+}
+html, body {
+    height: 100%; /* Ensure the height spans the viewport */
+    margin: 0;    /* Remove default margins */
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Make the root container span the viewport height */
+}
+
+.footer {
+    background-color: #13376F;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    margin-top: auto; /* Push the footer to the bottom */
+}
+
+.footer-link {
+    color: #fff;
+    text-decoration: none;
+}

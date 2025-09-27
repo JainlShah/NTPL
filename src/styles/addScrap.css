@@ -1,0 +1,133 @@
+.add-scrap-container {
+    background-color: #0b3a73;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    margin: auto;
+   
+  }
+  
+  .add-scrap-title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .add-scrap-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .scrap-form{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    
+  }
+  
+  input,
+  select {
+    padding: 10px;
+    border: none;
+    border-radius: 24px;
+    font-size: 14px;
+    background-color: #ffffff;
+  }
+  
+  input:focus,
+  select:focus {
+    outline: none;
+    background-color: #ffffff !important;
+  }
+  /* input:disabled:focus,
+  select:disabled {
+    background-color: #f0f0f0; 
+    
+    color: #999; 
+    
+    border: 1px solid #ccc; 
+    cursor: not-allowed; 
+    opacity: 0.6; 
+  } */
+
+
+  input:disabled{
+    background-color: #f0f0f0; /* Light gray background */
+    color: #041e3d; /* Gray text */
+    border: 1px solid #ccc; /* Light gray border */
+    cursor: not-allowed; /* Show "not-allowed" cursor */
+    opacity: 0.6; /* Slightly reduce opacity */
+  }
+  
+  input::placeholder {
+    color: #807a7a;
+  }
+  
+
+  
+  .scrap-types {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .scrap-types button {
+    background-color: white;
+    color: #0b3a73;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .scrap-types button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .scrap-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  
+  .scrap-popup-content {
+    text-align: center;
+  }
+  
+  .scrap-popup-content button {
+    margin-top: 10px;
+  }
+  .required .flex {
+    display: inline-flex; /* Aligns label and asterisk on the same line */
+    align-items: center;  /* Vertically center the items */
+  }
+  
+  .required p {
+    margin: 0 0 0 5px;
+    color: red; 
+    font-weight: bold;
+  }
+  
+  .required {
+    
+  }
+  
+  .required .flex {
+   
+  }
+  
+  input {
+    display: inline-block; /* Ensures the input aligns with the label */
+  }
+  

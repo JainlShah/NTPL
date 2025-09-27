@@ -1,0 +1,213 @@
+.action-modal {
+  background-color: #f3f4f6; /* Updated for better contrast */
+  padding: 10px;
+  color: #1f2937; /* Dark text for better readability */
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Enhanced shadow for depth */
+  max-width: 500px;
+  margin: auto;
+  /* left:50%; */
+  bottom:39%;
+  right: 0%;
+  /* top:10%; */
+  transform: translateX(-50%);
+  position: absolute;
+}
+.menu-dropdown {
+  margin-top: 15px;
+}
+
+.menu-items {
+  position: relative; 
+  margin-bottom: 8px;
+}
+
+.menu-button  {
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #1e3a8a;
+  border: 1px solid #d1d5db; /* Subtle border for structure */
+  padding: 10px;
+  cursor: pointer;
+  text-align: left;
+  width: 100%; /* Responsive width */
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.menu-button:hover {
+  background-color: #1e3a8a;
+  transform: translateY(-2px);
+  color: #ffffff; 
+}
+
+.submenu-container {
+  position: absolute; /* Positioning submenu absolutely */
+  right: 110%; /* Make submenu open to the right */
+  top: 0; /* Align with the top of the parent menu item */
+  margin-top: 0; /* Remove extra space */
+  background-color: #e2e8f0;
+  border-radius: 6px;
+  padding: 10px;
+  border: 1px solid #cbd5e1; /* Subtle border */
+  z-index: 10; /* Ensure the submenu appears above other content */
+}
+
+.submenu-item {
+  margin-bottom: 5px;
+}
+
+.submenu-button {
+  background-color:#f9f9f9;
+  color: #0056b3;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  transition: background-color 0.3s, transform 0.2s;
+  white-space: nowrap;
+}
+
+.submenu-button:hover {
+  background-color: #13376F; 
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+.submenu-right {
+  position: absolute; 
+  right: 100%;
+  top: 0;
+  background-color: #dbeafe;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #bfdbfe; 
+  z-index: 20; }
+
+.nested-sub-menu-button {
+  background-color: #93c5fd;
+  color: #1e40af;
+  border: none;
+  border-radius: 4px;
+  padding: 6px;
+  margin: 4px 0;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.nested-sub-menu-button:hover {
+  background-color: #60a5fa; 
+  transform: translateY(-1px);
+}
+
+.filter-button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.error-message {
+  color: #dc2626; 
+  font-size: 0.9em;
+  margin-top: 10px;
+  text-align: center;
+}
+
+
+.cutting-modal-content {
+  padding: 1rem;
+}
+
+.modal-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.input-container {
+  margin-bottom: 1.5rem;
+}
+
+.job-number-input {
+  width: 90%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.job-number-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+.job-number-input::placeholder {
+  color: #9ca3af;
+}
+
+.submit-button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.submit-button:disabled:hover {
+  background-color: #9ca3af;
+  transform: none;
+}
+
+.submit-button{
+  margin-right: 10px;
+}
+
+
+.arrow {
+  display: inline-block;
+  margin-right: 8px;
+  transform: rotate(180deg); 
+}
+
+
+.arrow.active,
+.submenu-item.active,
+.menu-button.active,
+.submenu-button.active {
+  font-weight: bold;
+  color: #ffffff; 
+  background-color: #13376F;
+}
+
+
+.jobno-select {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #0b3a73;
+}
+.confirmation-modal{
+  width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}

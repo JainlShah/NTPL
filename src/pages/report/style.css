@@ -1,0 +1,56 @@
+.dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 60px 40px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-button {
+  background: transparent;
+  border: 2px solid #13366c;
+  color: #13366c;
+  padding: 14px 28px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card-button:hover {
+  background: #13366c;
+  color: #ffffff;
+  box-shadow: 0 5px 15px rgba(19, 54, 108, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 40px 20px;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .card-button {
+    font-size: 14px;
+    padding: 12px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard {
+    padding: 30px 15px;
+  }
+
+  .card-button {
+    font-size: 13px;
+    padding: 10px 20px;
+  }
+}

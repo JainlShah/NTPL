@@ -1,0 +1,233 @@
+.navbar-container{
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #fff;
+}
+ 
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #13376F;
+    z-index: 1000;
+    margin: 10px 0px 0px 0px;
+}
+ 
+nav img {
+    max-width: 100%;
+    height: auto;
+    max-height: 70px;
+    width: 120px;
+}
+.logo{
+    padding-left: 25px;
+    padding-bottom:15px;
+    background-color: #fff;
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
+    max-width: 600px;
+    min-width: 250px;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin-bottom: 3px;
+}
+.logo .botton-line{
+    visibility: hidden;
+}
+ 
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#navbar li {
+    padding: 0 20px;
+    position: relative;
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li.active a {
+    color: #f4a261;
+}
+
+#navbar li a:hover::after,
+#navbar li.active a::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background-color: #f4a261;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+    transition: width 0.3s ease;
+}
+
+#mobile {
+    display: none;
+    align-items: center;
+    cursor: pointer;
+}
+
+#mobile i {
+    color: #13376F;
+    font-size: 24px;
+}
+
+@media screen and (max-width: 1200px)and (min-width: 901px) {
+    #navbar li a {
+        font-size: 16px;
+    }
+    nav img {
+        max-width: 100px;
+    }
+    .logo {
+        max-width: 200px;
+        min-width: 200px;
+        clip-path: none; /* Simplify for smaller screens */
+        clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+    }
+}
+
+@media screen and (max-width: 900px)and (min-width: 769px) {
+    #navbar li a {
+        font-size: 14px;
+    }
+    nav img {
+        max-width: 100px;
+    }
+    .logo {
+        max-width: 200px;
+        min-width: 150px;
+        clip-path: none; /* Simplify for smaller screens */
+        clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .botton-line {
+        visibility: hidden;
+    }
+
+    #navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: fixed;
+        top: 70px;
+        right: -300px;
+        height: 100vh;
+        width: 250px;
+        background-color: #13376F;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease;
+        padding-top: 20px;
+        z-index: 1001;
+    }
+
+    #navbar.active {
+        right: 0;
+    }
+
+    #navbar li {
+        margin-bottom: 20px;
+    }
+
+    #mobile {
+        display: flex;
+        align-items: center;
+        z-index: 1002;
+    }
+
+    nav img {
+        max-width: 80px;
+        margin-left: 10px;
+    }
+
+    nav {
+        padding: 10px 20px;
+        background-color: #fff;
+        color: #13376F;
+    }
+
+    .logo {
+        max-width: 100px;
+        clip-path: none; /* Simplify for smaller screens */
+    }
+}
+
+/* Submenu styles */
+.submenu {
+    position: absolute;
+    background-color: #13376F;
+    list-style: none;
+    padding: 10px 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    display: none; /* Initially hidden */
+    z-index: 1000; 
+    width: 200px;
+  }
+  
+  .menu-item:hover .submenu {
+    display: block; /* Show submenu on hover */
+    color: #13376F;
+  }
+  
+  .submenu li {
+    padding: 5px 0;
+    color: #13376F;
+  }
+  
+  .submenu li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    transition: color 0.3s ease;
+    color: #ffffff !important;
+  }
+  
+  .submenu li a:hover {
+    color: #007bff; /* Highlight submenu items on hover */
+  }
+  
+  /* Ensure existing z-index for other elements */
+  #navbar {
+    z-index: 999; /* Submenu appears above navbar */
+  }
+  
+  #mobile {
+    z-index: 1002; /* Mobile menu toggle button remains accessible */
+  }
+  
+  .submenu li a:hover,
+.submenu li a.active {
+  color: #007bff; /* Highlight submenu items on hover or when active */
+}
+
+.submenu li a.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #007bff; /* Underline color for active submenu item */
+  transition: width 0.3s ease;
+}

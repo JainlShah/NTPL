@@ -1,0 +1,54 @@
+.remark-popup-container{
+    /* position: absolute; */
+    background: transparent; /* Dark Blue */
+    border-radius: 10px;
+    padding: 20px;
+    color: #073763;
+    z-index: 1000;
+    width: 500px;
+    height: 500px;
+
+}
+.remark-popup-body{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    background-color: #dfe1e4;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.remark-input-container{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    width: max-content;
+    background-color: #dfe1e4;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+}
+.remark-input-container input{
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    border-radius: 24px;
+    color: #073763;
+}
+.remark-input-container input:focus{
+    border: 1px solid #073763;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}

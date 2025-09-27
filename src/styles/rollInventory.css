@@ -1,0 +1,19 @@
+.roll-inventory-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.roll-inventory-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+}
+.table-container{
+    width: 90%;
+    margin: 20px;
+}

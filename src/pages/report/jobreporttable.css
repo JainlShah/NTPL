@@ -1,0 +1,28 @@
+.job-report-container {
+  width: 100%;
+  overflow-x: auto;
+  font-family: Arial, sans-serif;
+}
+
+.job-report-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.job-report-table th,
+.job-report-table td {
+  padding: 0.75rem;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.job-report-table th {
+  background-color: #003366;
+  color: white;
+  font-weight: bold;
+}
+
+.coil-row:hover {
+  background-color: #c6e2ff !important;
+}

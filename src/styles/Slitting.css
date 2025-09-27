@@ -1,0 +1,608 @@
+.slitting-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.slitting-tab-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.tab {
+  margin-right: 20px;
+  font-size: 18px;
+  cursor: pointer;
+  padding-bottom: 5px;
+  color: #03396C;
+  border-bottom: 2px solid transparent;
+  width: fit-content;
+
+}
+
+.tab.active {
+  font-weight: bold;
+  border-bottom: 2px solid #03396C;
+}
+
+.slitting-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 10px;
+  padding-bottom: 50px;
+}
+
+/* Supervisor */
+.supervisor-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+
+/* Operator */
+.operator-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/*slitting-form-container*/
+
+.slitting-form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow-y: scroll;
+}
+
+
+.common-table {
+  color: #03396C;
+}
+
+.common-table input {
+  color: #03396C;
+  border: 1px solid #03396C;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  text-overflow: calc(100% - 20px);
+}
+
+.common-table select {
+  color: #03396C;
+  border: 1px solid #03396C;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+
+/* General Table Styles */
+.common-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+  text-align: left;
+}
+
+.common-table thead{
+  background-color: #03396C;
+  color: #ffffff;
+}
+.common-table th,
+.common-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+.common-table th {
+  background-color: #f4f4f4;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Split Row Styles */
+.split-row {
+  position: relative;
+  background-color: #f9f9f9;
+  /* Light gray background for split rows */
+  border-left: 3px solid #2196f3;
+  /* Blue border to indicate split */
+}
+
+
+/* Connector Line for Split Rows */
+
+
+.split-row:last-of-type::before {
+  height: 50%;
+  /* Connect only up to the middle for the last split row */
+  top: 0;
+}
+
+/* Non-Split Row Styles */
+.non-split-row {
+  background-color: #fff;
+  /* White background for non-split rows */
+  color: #000;
+  /* Default text color */
+}
+
+/* Add Icon Styles */
+.fa-plus {
+  color: #28a745;
+  /* Green color for Add icon */
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.fa-plus:hover {
+  color: #1e7e34;
+  /* Darker green on hover */
+}
+
+.fa-trash {
+  color: #dc3545;
+  /* Red color for Delete icon */
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.fa-trash:hover {
+  color: #b21f2d;
+  /* Darker red on hover */
+}
+
+/* Highlight Hover */
+.common-table tr:hover {
+  background-color: #e8f4fd;
+  /* Light blue on hover */
+}
+
+/* Form Container Styles */
+.slitting-form-container {
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  width: 70%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: 95%;
+}
+
+.slitting-form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.slitting-form-container label {
+  color: #03396C;
+}
+
+/* Form Group Styles */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+
+/* Updated Table Wrapper to Match Form Container */
+.slitting-form-container {
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  width: 60%;
+  /* Consistent width */
+}
+
+.common-table-wrapper {
+  margin: 0 auto;
+  overflow-x: auto;
+  /* Enables horizontal scrolling for small screens */
+  -webkit-overflow-scrolling: touch;
+  /* Smooth scrolling for touch devices */
+  background-color: #f9f9f9;
+  /* Matches container background */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  /* Matches container border radius */
+  padding: 10px;
+}
+
+.slitting-form-data-table-wrapper{
+  display: flex;
+  overflow-x: scroll;
+}
+/* Table */
+.common-table {
+  width: 100%;
+  /* Matches the container's width */
+  border-collapse: collapse;
+  font-size: 16px;
+  color: #03396C;
+  /* Matches container text color */
+  text-align: left;
+}
+
+.common-table th,
+.common-table td {
+  padding: 12px;
+  /* Consistent padding */
+  border: 1px solid #ddd;
+  /* Matches form container border */
+  text-align: left;
+}
+
+.common-table th {
+  background-color: #f4f4f4;
+  /* Matches form heading background */
+  color: #333;
+  font-weight: bold;
+}
+
+/* Split Row Styles */
+.split-row {
+  background-color: #f9f9f9;
+  /* Light gray background for split rows */
+  border-left: 4px solid #2196f3;
+  /* Blue border to indicate split */
+}
+
+.common-table tr:hover {
+  background-color: #e8f4fd;
+  /* Light blue on hover */
+}
+
+/* Form Inputs Inside the Table */
+.common-table input {
+  color: #03396C;
+  border: 1px solid #03396C;
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 14px;
+  margin-bottom: 10px;
+
+  /* Ensures inputs match table cell width */
+  box-sizing: border-box;
+
+  /* Allow the input to resize with its content */
+  width: 100%;
+  min-width: 80px;
+
+  /* Prevent text from being hidden */
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: clip;
+
+  /* Ensure visibility on smaller screens */
+  max-width: 100%;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .slitting-form-container {
+    width: 90%;
+    /* Expand to fit smaller screens */
+  }
+
+  .common-table th,
+  .common-table td {
+    font-size: 14px;
+    padding: 6px;
+    /* Adjust padding for smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .slitting-form-container {
+    width: 95%;
+    /* Almost full width for very small screens */
+  }
+
+  .common-table th,
+  .common-table td {
+    font-size: 12px;
+    padding: 4px;
+    /* Further adjust padding for very small screens */
+  }
+
+  .common-table-wrapper {
+    margin-bottom: 16px;
+  }
+}
+
+.slitting-form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+}
+
+.slitting-form-actions button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px;
+  cursor: pointer;
+  color: white;
+}
+
+.slitting-form-actions .add-row-button {
+  background-color: #156623d8;
+  color: white;
+}
+
+.slitting-form-actions .add-row-button:hover {
+  background-color: #115a1d;
+}
+
+
+
+
+
+
+/* Wrapper for the dropdown and popup */
+/* Dropdown wrapper */
+.dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+  align-items: center;
+  margin-top: -20px;
+  margin-left: -5px;
+}
+
+/* Dropdown button */
+.dropdown-button {
+  padding: 8px 12px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  color: #03396C;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-button:hover {
+  background-color: #03396C;
+  color: white;
+  border: 1px solid #03396C;
+}
+
+/* Default popup container */
+.popup {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 100px;
+  padding: 10px 0;
+}
+
+/* Position below the button */
+.popup-down {
+  top: 100%;
+  left: 0;
+  margin-top: 5px;
+}
+
+/* Position above the button */
+.popup-up {
+  bottom: 100%;
+  left: 0;
+  margin-bottom: 5px;
+}
+
+.popup button {
+  background-color: #fff;
+  color: #0056b3;
+  padding: 8px 12px;
+  text-align: left;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.popup button:hover {
+  background-color: #e6f3ff;
+  color: #03396C;
+}
+
+/* Default hold popup container */
+.hold-popup {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 150px;
+  height: 200px;
+  overflow-y: auto;
+  padding: 15px;
+  scrollbar-width: thin;
+  justify-content: start;
+  align-items: start;
+}
+
+/* Position below the button */
+.hold-popup.popup-down {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 5px;
+}
+
+/* Position above the button */
+.hold-popup.popup-up {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 5px;
+}
+
+/* Checkbox labels inside the hold popup */
+.hold-popup label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #0056b3;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  padding: 0px 8px;
+}
+
+.hold-popup input[type="checkbox"] {
+  margin-right: 10px;
+  cursor: pointer;
+  padding-top: 5px;
+  margin-bottom: 5px;
+  min-width: 0px;
+
+}
+
+/* Text input for 'Other Remark' */
+.hold-popup input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #0056b3;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+/* Close button */
+.hold-popup button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #0056b3;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.hold-popup button:hover {
+  background-color: #004499;
+}
+
+/* Scrollbar for the hold popup */
+.hold-popup::-webkit-scrollbar {
+  width: 6px;
+}
+
+.hold-popup::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 3px;
+}
+
+.hold-popup::-webkit-scrollbar-thumb:hover {
+  background-color: #aaa;
+}
+
+/*partial coil hold popup*/
+.common-popup{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow-y: scroll;
+}
+.common-popup-body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 600px;
+  /* height: 300px; */
+}
+.common-popup .slitting-form-actions{
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+@media screen and (max-width: 1360px) {
+  .slitting-form-container{
+    width: 90%;
+  }
+  
+}
+
+
+/* Change date picker icon color */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(27%) sepia(100%) saturate(7471%) hue-rotate(189deg) brightness(91%) contrast(104%); /* Change this for #004499 color */
+  cursor: pointer;
+}

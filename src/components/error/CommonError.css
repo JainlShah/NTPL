@@ -1,0 +1,55 @@
+.common-error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+.common-error-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    background-color: #dfe1e4;
+    padding: 20px;
+    border-radius: 10px;
+    padding-bottom: 50px;
+}
+.common-error-body img{
+    width: 400px;
+    height: 400px;
+}
+
+.bottom-container{
+    background-color: #c4cbd8;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 42px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border : 2px solid #002060b6;
+}
+.bottom-container button{
+    background-color: #002060;
+    color: white;
+    border: none;
+    padding:10px 30px;
+    cursor: pointer;
+    border-radius: 24px;
+    margin: 2px;
+}
+
+.bottom-container button:hover{
+    background-color: #002060b6;
+    color: white;
+    border: none;
+    padding:10px 30px;
+    cursor: pointer;
+    border-radius: 24px;
+    margin: 5px;
+    transition: all 0.2s ease-in-out;
+}

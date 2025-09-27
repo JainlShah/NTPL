@@ -1,0 +1,89 @@
+/* General Menu Styles */
+.menu {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #14245a;
+  }
+  
+  .menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .menu-nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .menu-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .menu-nav li {
+    display: inline-block;
+  }
+  
+  .menu-nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  .menu-nav a:hover {
+    color: #007bff;
+  }
+  
+  /* Responsive Menu */
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    .menu-nav {
+      display: none;
+      flex-direction: column;
+      background: #fff;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 200px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      z-index: 100;
+    }
+  
+    .menu-nav.open {
+      display: flex;
+    }
+  
+    .menu-nav ul {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .menu-nav li {
+      text-align: right;
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .menu-nav {
+      display: flex;
+    }
+  
+    .menu-toggle {
+      display: none;
+    }
+  }
+  

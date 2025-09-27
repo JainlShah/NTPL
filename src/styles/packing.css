@@ -1,0 +1,178 @@
+.packing-container {
+  width: 100%;
+
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* overflow-y: scroll; */
+
+}
+
+.packing-cards {
+  width: 80%;
+  border: 1px solid #b3b7bd;
+  border-radius: 8px;
+  padding-top: 20px;
+
+}
+
+.cards-container {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  /* 5 columns for larger screens */
+  grid-auto-rows: auto;
+  /* Automatically adjusts row heights */
+  gap: 20px;
+  /* Space between cards */
+  padding: 20px;
+  align-items: center;
+  justify-items: center;
+  /* Centers cards in their grid cells */
+  background-color: #f9f9f9;
+}
+
+.cards-container :hover {
+  background-color: #ffffff;
+  color: #13366C;
+  transform: scale(1.05);
+}
+
+.packing-card {
+  height: 14vh;
+  width: 12vw;
+  background-color: #13366C;
+  color: white;
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(190, 186, 186, 0.76);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+}
+
+
+
+
+.packing-card h3 {
+  font-size: 16px;
+  /* Default font size for large screens */
+  font-weight: bold;
+  margin: 8px 0;
+  /* Add some spacing around the heading */
+  line-height: 1.2;
+  /* Ensure proper line spacing */
+}
+
+.packing-card p {
+  font-size: 14px;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .packing-card h3 {
+    font-size: 14px;
+    /* Slightly smaller for medium screens */
+  }
+
+  .cards-container {
+    grid-template-columns: repeat(4, 1fr);
+    /* Adjust to 4 cards per row for medium screens */
+    gap: 15px;
+  }
+
+  .packing-card {
+    max-width: 160px;
+    /* Reduce max width for medium screens */
+    padding: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .packing-card h3 {
+    font-size: 11px;
+    /* Smaller for small screens */
+  }
+
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+    /* Adjust to 2 cards per row for small screens */
+    gap: 10px;
+  }
+
+  .packing-card {
+    max-width: 140px;
+    /* Reduce max width for small screens */
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .packing-card h3 {
+    font-size: 10px;
+    /* Smallest size for very small screens */
+    line-height: 1.1;
+    /* Adjust line height for readability */
+    margin: 6px 0;
+    /* Reduce margin for tighter layout */
+  }
+
+  .cards-container {
+    grid-template-columns: repeat(1, 1fr);
+    /* Adjust to 1 card per row for very small screens */
+  }
+
+  .packing-card {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .pagination button {
+    padding: 5px 8px;
+  }
+}
+
+.popup-containe {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  color: #073763;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+  scrollbar-width: thin;
+  scrollbar-color: #073763 #ffffff;
+}
+
+
+.popup-title {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.shortlist-tabl {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  color: #03396C;
+  text-align: left;
+}
+
+.shortlist-tabl input,
+.shortlist-tabl select {
+  color: #03396C;
+  border: 1px solid #03396C;
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
