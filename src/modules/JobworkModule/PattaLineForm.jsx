@@ -25,7 +25,18 @@ const PattaLineForm = ({ formData, onBack, onSubmit }) => {
     );
   };
 
-
+  const handleAddRow = () => {
+    setPattaLineData(prev => [
+      ...prev,
+      {
+        no: prev.length + 1,
+        noOfSets: '',
+        length: '',
+        width: '',
+        stack: ''
+      }
+    ]);
+  };
 
   const handleRemoveRow = (index) => {
     if (pattaLineData.length > 1) {
@@ -233,6 +244,7 @@ const PattaLineForm = ({ formData, onBack, onSubmit }) => {
             </div>
 
             
+          </div>
 
           {/* Action Buttons */}
           <div style={{ 
