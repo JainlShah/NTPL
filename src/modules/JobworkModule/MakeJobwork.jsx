@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import StapLapForm from './StapLapForm';
+import OverLapForm from './OverLapForm';
 
 const MakeJobwork = () => {
   const [processType, setProcessType] = useState("");
   const [laminationType, setLaminationType] = useState("");
   const [showForm, setShowForm] = useState(false);
+  const [showLaminationForm, setShowLaminationForm] = useState(false);
   const [formData, setFormData] = useState({
     drawingNo: "ET-2126X (C-5958)",
     stackingFactor: "97",
@@ -59,8 +62,18 @@ const MakeJobwork = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log("Form submitted:", formData);
+    setShowForm(false);
+    setShowLaminationForm(true);
+  };
+
+  const handleLaminationSubmit = (laminationData) => {
+    console.log("Final submission:", laminationData);
+    // Handle final form submission logic here
+  };
+
+  const handleBackToForm = () => {
+    setShowLaminationForm(false);
+    setShowForm(true);
   };
 
   const canProceed = () => {
@@ -69,6 +82,27 @@ const MakeJobwork = () => {
     }
     return processType === "reactor" || processType === "patta";
   };
+
+  // Show lamination-specific forms
+  if (showLaminationForm && processType === "lamination") {
+    if (laminationType === "stapLap") {
+      return (
+        <StapLapForm 
+          formData={formData}
+          onBack={handleBackToForm}
+          onSubmit={handleLaminationSubmit}
+        />
+      );
+    } else if (laminationType === "overLap") {
+      return (
+        <OverLapForm 
+          formData={formData}
+          onBack={handleBackToForm}
+          onSubmit={handleLaminationSubmit}
+        />
+      );
+    }
+  }
 
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#f8f9fa', padding: '2rem 0' }}>
