@@ -187,12 +187,12 @@ const MakeJobwork = () => {
                   <label style={{ 
                     display: 'block', 
                     fontSize: '0.875rem', 
-                    fontWeight: '500', 
+                    {processType === "patta" ? "No Of Items[DOKE]" : "*No Of Items[DOKE]"}
                     color: '#374151', 
                     marginBottom: '0.5rem' 
                   }}>
-                    Lamination Type <span className="text-red-500">*</span>
-                  </label>
+                    value={formData.noOfItems}
+                    onChange={(e) => handleInputChange("noOfItems", e.target.value)}
                   <select
                     style={{
                       width: '100%',
@@ -804,15 +804,36 @@ const MakeJobwork = () => {
                     }}
                   >
                     Continue
-                  </button>
+                    <option value="lamination">Lamination</option>
+                    <option value="reactor">Reactor</option>
+                    <option value="patta">Patta Line</option>
+                  </select>
                 </div>
-              </div>
-            </form>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-};
 
-export default MakeJobwork;
+                {processType === "lamination" && (
+                  <div style={{ marginBottom: '1.5rem' }}>
+                    <label style={{ 
+                      display: 'block', 
+                      fontSize: '0.875rem', 
+                      fontWeight: '500', 
+                      color: '#374151', 
+                      marginBottom: '0.5rem' 
+                    }}>
+                      Lamination Type <span style={{ color: 'red' }}>*</span>
+                    </label>
+                    <select
+                      style={{
+                        width: '100%',
+                        padding: '0.75rem',
+                        color: '#374151',
+                        border: '1px solid #d1d5db',
+                        borderRadius: '6px',
+                        fontSize: '0.875rem',
+                        outline: 'none'
+                      }}
+                      value={laminationType}
+                      onChange={(e) => setLaminationType(e.target.value)}
+                    >
+                      <option value="">Select lamination type</option>
+                      <option value="stapLap">Stap Lap</option>
+                      <option value="overLap">Over Lap</option>
