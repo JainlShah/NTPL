@@ -641,11 +641,12 @@ const JobworkReport = () => {
               <th>GAUGE</th>
               <th>STACKING FACTOR</th>
               <th>CREATED</th>
+              <th>REPORT</th>
             </tr>
           </thead>
           <tbody>
             {jobworkList.map((row, index) => (
-              <tr key={index} onClick={() => handleJobClick(row)} className="clickable-row">
+              <tr key={index}>
                 <td>{row.jobNo}</td>
                 <td>{row.drawingNo}</td>
                 <td>{row.woNo}</td>
@@ -656,6 +657,14 @@ const JobworkReport = () => {
                 <td>{row.gauge}</td>
                 <td>{row.stackingFactor}</td>
                 <td>{row.created}</td>
+                <td>
+                  <button 
+                    className="report-btn"
+                    onClick={() => handleJobClick(row)}
+                  >
+                    Report
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
