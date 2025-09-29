@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ProcessQCReport from './ProcessQCReport';
 import SlittingReports from './SlittingReports';
+import ProcessQCForm from './ProcessQCForm';
 import '../../styles/finalQC.css';
 
 const FinalQC = () => {
@@ -9,6 +10,7 @@ const FinalQC = () => {
   const [filters, setFilters] = useState({});
   const [showProcessQCReport, setShowProcessQCReport] = useState(false);
   const [showSlittingReports, setShowSlittingReports] = useState(false);
+  const [showProcessQCForm, setShowProcessQCForm] = useState(false);
   const [selectedJob, setSelectedJob] = useState(null);
   
   // Mock data based on the image
@@ -126,6 +128,10 @@ const FinalQC = () => {
       const job = mockData.find(item => item.jobNo === jobNo);
       setSelectedJob(job);
       setShowSlittingReports(true);
+    } else if (action === 'processForm') {
+      const job = mockData.find(item => item.jobNo === jobNo);
+      setSelectedJob(job);
+      setShowProcessQCForm(true);
     }
     // Handle other actions here
   };
@@ -244,7 +250,7 @@ const FinalQC = () => {
                 <td>
                   <button 
                     className="action-btn edit-btn"
-                    onClick={() => handleActionClick('edit', row.jobNo)}
+                    onClick={() => handleActionClick('processForm', row.jobNo)}
                   >
                     <i className="fas fa-edit"></i>
                   </button>
@@ -294,6 +300,21 @@ const FinalQC = () => {
           jobData={selectedJob}
           onClose={() => {
             setShowSlittingReports(false);
+            setSelectedJob(null);
+          }}
+        />
+      )}
+
+      {showProcessQCForm && (
+        <ProcessQCForm
+          jobData={selectedJob}
+          onClose={() => {
+            setShowProcessQCForm(false);
+            setSelectedJob(null);
+          }}
+          onSave={(formData) => {
+            console.log('Process QC Form saved:', formData);
+            setShowProcessQCForm(false);
             setSelectedJob(null);
           }}
         />
