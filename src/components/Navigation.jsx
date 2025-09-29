@@ -23,6 +23,7 @@ import JobReport from "../pages/report/jobReport.jsx";
 import ReportDashboard from "../pages/report/dashboard.jsx";
 import JobworkLanding from '../modules/JobworkModule/JobworkLanding.jsx';
 import MakeJobwork from '../modules/JobworkModule/MakeJobwork.jsx';
+import FinalQC from '../pages/jobwork/FinalQC.jsx';
 function Navigation() {
   return (
     <BrowserRouter>
@@ -182,6 +183,14 @@ function Navigation() {
           element={
             <ProtectedRoute>
               <MakeJobwork />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/jobwork/finalqc"
+          element={
+            <ProtectedRoute>
+              <FinalQC />
             </ProtectedRoute>
           }
         />
