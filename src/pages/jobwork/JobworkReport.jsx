@@ -150,10 +150,10 @@ const JobworkReport = () => {
           { no: 5, length: 675, width: 195, drawingWgt: 13.350, processWgt: 15.386, strips: 60, totalStack: 15.98, observedGauge: '', actualStrips: '', actualWgt: '', holePitch: '', difference: '', length: '', width: '', burrL: '', operator: '' },
           { no: 6, length: 665, width: 185, drawingWgt: 10.980, processWgt: 12.675, strips: 52, totalStack: 13.97, observedGauge: '', actualStrips: '', actualWgt: '', holePitch: '', difference: '', length: '', width: '', burrL: '', operator: '' },
           { no: 7, length: 655, width: 175, drawingWgt: 8.820, processWgt: 9.993, strips: 45, totalStack: 11.97, observedGauge: '', actualStrips: '', actualWgt: '', holePitch: '', difference: '', length: '', width: '', burrL: '', operator: '' },
-          { no: 8, length: 640, width: 160, drawingWgt: 9.950, processWgt: 11.361, strips: 56, totalStack: 14.97, observedGauge: '', actualStrips: '', actualWgt: '', holePitch: '', length: '', width: '', burrL: '', operator: '' },
+          { no: 8, length: 640, width: 160, drawingWgt: 9.950, processWgt: 11.361, strips: 56, totalStack: 14.97, observedGauge: '', actualStrips: '', actualWgt: '', holePitch: '', difference: '', length: '', width: '', burrL: '', operator: '' },
           { no: 9, length: 625, width: 145, drawingWgt: 7.710, processWgt: 8.619, strips: 49, totalStack: 12.97, observedGauge: '', actualStrips: '', actualWgt: '', holePitch: '', difference: '', length: '', width: '', burrL: '', operator: '' },
           { no: 10, length: 610, width: 130, drawingWgt: 5.770, processWgt: 6.442, strips: 41, totalStack: 10.98, observedGauge: '', actualStrips: '', actualWgt: '', holePitch: '', difference: '', length: '', width: '', burrL: '', operator: '' },
-          { no: 11, length: 595, width: 110, drawingWgt: 4.220, processWgt: 4.695, strips: 35, totalStack: 9.37, observedGauge: '', actualStrips: '', actualWgt: '', holePitch: '', difference: '', length: '', width: '', burrL: '', operator: '' }
+          { no: 11, length: 595, width: 110, drawingWgt: 4.220, processWgt: 4.695, strips: 35, totalStack: 9.37, observedGauge: '', actualStrips: '', actualWgt: '', holePitch: '', length: '', width: '', burrL: '', operator: '' }
         ],
         totals: { drawingWgt: 180.340, processWgt: 209.894, strips: 845, totalStack: 225.50 }
       },
@@ -170,13 +170,13 @@ const JobworkReport = () => {
           { no: 4, length: 1015, width: 205, drawingWgt: 46.170, processWgt: 49.020, strips: 150, totalStack: 40.00, observedGauge: '', actualStrips: '', actualWgt: '', holePitch: '', difference: '', length: '', width: '', burrL: '', operator: '' },
           { no: 5, length: 1005, width: 195, drawingWgt: 35.250, processWgt: 37.240, strips: 120, totalStack: 32.00, observedGauge: '', actualStrips: '', actualWgt: '', holePitch: '', difference: '', length: '', width: '', burrL: '', operator: '' },
           { no: 6, length: 995, width: 185, drawingWgt: 29.360, processWgt: 30.877, strips: 105, totalStack: 28.00, observedGauge: '', actualStrips: '', actualWgt: '', holePitch: '', difference: '', length: '', width: '', burrL: '', operator: '' },
-          { no: 7, length: 985, width: 175, drawingWgt: 23.880, processWgt: 24.995, strips: 90, totalStack: 24.00, observedGauge: '', actualStrips: '', actualWgt: '', holePitch: '', difference: '', length: '', width: '', burrL: '', operator: '' },
-          { no: 8, length: 970, width: 160, drawingWgt: 27.420, processWgt: 28.759, strips: 112, totalStack: 29.99, observedGauge: '', actualStrips: '', actualWgt: '', holePitch: '', difference: '', length: '', width: '', burrL: '', operator: '' },
-          { no: 9, length: 955, width: 145, drawingWgt: 21.640, processWgt: 22.572, strips: 97, totalStack: 25.99, observedGauge: '', actualStrips: '', actualWgt: '', holePitch: '', difference: '', length: '', width: '', burrL: '', operator: '' },
-          { no: 10, length: 940, width: 130, drawingWgt: 16.500, processWgt: 17.108, strips: 82, totalStack: 22.00, observedGauge: '', actualStrips: '', actualWgt: '', holePitch: '', difference: '', length: '', width: '', burrL: '', operator: '' },
-          { no: 11, length: 920, width: 110, drawingWgt: 15.330, processWgt: 15.711, strips: 90, totalStack: 24.00, observedGauge: '', actualStrips: '', actualWgt: '', holePitch: '', difference: '', length: '', width: '', burrL: '', operator: '' },
-          { no: 12, length: 900, width: 90, drawingWgt: 9.470, processWgt: 9.677, strips: 67, totalStack: 18.01, observedGauge: '', actualStrips: '', actualWgt: '', holePitch: '', difference: '', length: '', width: '', burrL: '', operator: '' },
-          { no: 13, length: 880, width: 70, drawingWgt: 5.760, processWgt: 5.842, strips: 52, totalStack: 13.99, observedGauge: '', actualStrips: '', actualWgt: '', holePitch: '', difference: '', length: '', width: '', burrL: '', operator: '' }
+          { no: 7, length: 985, width: 175, drawingWgt: 23.880, processWgt: 24.995, strips: 90, totalStack: 24.00, observedGauge: '', actualStrips: '', actualWgt: '', holePitch: '', length: '', width: '', burrL: '', operator: '' },
+          { no: 8, length: 970, width: 160, drawingWgt: 27.420, processWgt: 28.759, strips: 112, totalStack: 29.99, observedGauge: '', actualStrips: '', actualWgt: '', holePitch: '', length: '', width: '', burrL: '', operator: '' },
+          { no: 9, length: 955, width: 145, drawingWgt: 21.640, processWgt: 22.572, strips: 97, totalStack: 25.99, observedGauge: '', actualStrips: '', actualWgt: '', holePitch: '', length: '', width: '', burrL: '', operator: '' },
+          { no: 10, length: 940, width: 130, drawingWgt: 16.500, processWgt: 17.108, strips: 82, totalStack: 22.00, observedGauge: '', actualStrips: '', actualWgt: '', holePitch: '', length: '', width: '', burrL: '', operator: '' },
+          { no: 11, length: 920, width: 110, drawingWgt: 15.330, processWgt: 15.711, strips: 90, totalStack: 24.00, observedGauge: '', actualStrips: '', actualWgt: '', holePitch: '', length: '', width: '', burrL: '', operator: '' },
+          { no: 12, length: 900, width: 90, drawingWgt: 9.470, processWgt: 9.677, strips: 67, totalStack: 18.01, observedGauge: '', actualStrips: '', actualWgt: '', holePitch: '', length: '', width: '', burrL: '', operator: '' },
+          { no: 13, length: 880, width: 70, drawingWgt: 5.760, processWgt: 5.842, strips: 52, totalStack: 13.99, observedGauge: '', actualStrips: '', actualWgt: '', holePitch: '', length: '', width: '', burrL: '', operator: '' }
         ],
         totals: { drawingWgt: 474.950, processWgt: 503.291, strips: 1693, totalStack: 451.98 },
         grossTotal: { drawingWgt: 1078.320, processWgt: 1134.472, strips: 4230, totalStack: 1129.48 }
@@ -574,10 +574,10 @@ const JobworkReport = () => {
                 </tr>
                 <tr className="grand-totals-row">
                   <td colSpan="3"><strong>Gross Total</strong></td>
-                  <td><strong>{selectedJob.outerLimbPlate.grossTotal.drawingWgt}</strong></td>
-                  <td><strong>{selectedJob.outerLimbPlate.grossTotal.processWgt}</strong></td>
-                  <td><strong>{selectedJob.outerLimbPlate.grossTotal.strips}</strong></td>
-                  <td><strong>{selectedJob.outerLimbPlate.grossTotal.totalStack}</strong></td>
+                  <td><strong>{selectedJob.yokeLimbPlates.grossTotal.drawingWgt}</strong></td>
+                  <td><strong>{selectedJob.yokeLimbPlates.grossTotal.processWgt}</strong></td>
+                  <td><strong>{selectedJob.yokeLimbPlates.grossTotal.strips}</strong></td>
+                  <td><strong>{selectedJob.yokeLimbPlates.grossTotal.totalStack}</strong></td>
                   <td colSpan="9"></td>
                 </tr>
               </tbody>
