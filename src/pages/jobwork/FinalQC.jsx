@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import ProcessQCReport from './ProcessQCReport';
 import '../../styles/finalQC.css';
 
 const FinalQC = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState('');
   const [filters, setFilters] = useState({});
+  const [showProcessQCReport, setShowProcessQCReport] = useState(false);
+  const [selectedJob, setSelectedJob] = useState(null);
   
   // Mock data based on the image
   const mockData = [
@@ -112,7 +115,13 @@ const FinalQC = () => {
 
   const handleActionClick = (action, jobNo) => {
     console.log(`${action} clicked for job: ${jobNo}`);
-    // Handle different actions here
+    
+    if (action === 'processReport') {
+      const job = mockData.find(item => item.jobNo === jobNo);
+      setSelectedJob(job);
+      setShowProcessQCReport(true);
+    }
+    // Handle other actions here
   };
 
   const renderPaginationButtons = () => {
@@ -263,6 +272,16 @@ const FinalQC = () => {
           </tbody>
         </table>
       </div>
+
+      {showProcessQCReport && (
+        <ProcessQCReport
+          jobData={selectedJob}
+          onClose={() => {
+            setShowProcessQCReport(false);
+            setSelectedJob(null);
+          }}
+        />
+      )}
     </div>
   );
 };
