@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import SlittingReports from './SlittingReports';
 import '../../styles/processQCReport.css';
 
 const ProcessQCReport = ({ jobData, onClose }) => {
+  const [showSlittingReport, setShowSlittingReport] = useState(false);
+
   // Mock data based on the images
   const reportData = {
     header: {
@@ -92,6 +95,25 @@ const ProcessQCReport = ({ jobData, onClose }) => {
   const handlePrint = () => {
     window.print();
   };
+
+  const handleSlittingReport = () => {
+    setShowSlittingReport(true);
+  };
+
+  const handleCloseSlittingReport = () => {
+    setShowSlittingReport(false);
+  };
+
+  // If slitting report is open, show it
+  if (showSlittingReport) {
+    return (
+      <SlittingReports 
+        jobData={reportData.header}
+        onClose={handleCloseSlittingReport}
+        showAsPopup={true}
+      />
+    );
+  }
 
   const handleSave = () => {
     console.log('Saving QC report data...');
@@ -313,6 +335,9 @@ const ProcessQCReport = ({ jobData, onClose }) => {
         <div className="qc-actions">
           <button className="qc-btn qc-btn-secondary" onClick={onClose}>
             Close
+          </button>
+          <button className="qc-btn qc-btn-primary" onClick={handleSlittingReport}>
+            Slitting Report
           </button>
           <button className="qc-btn qc-btn-primary" onClick={handleSave}>
             Save

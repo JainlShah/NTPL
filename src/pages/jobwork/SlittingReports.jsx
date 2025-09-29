@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../../styles/slittingReports.css';
 
-const SlittingReports = ({ onClose }) => {
+const SlittingReports = ({ onClose, jobData = null, showAsPopup = false }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedJob, setSelectedJob] = useState(null);
@@ -171,8 +171,20 @@ const SlittingReports = ({ onClose }) => {
     setSelectedJob(reportData);
   };
 
+  // If jobData is provided and showAsPopup is true, show the detailed report directly
+  useEffect(() => {
+    if (jobData && showAsPopup) {
+      const reportData = getSlittingReportData(jobData.jobNo);
+      setSelectedJob(reportData);
+    }
+  }, [jobData, showAsPopup]);
+
   const handleBackToList = () => {
-    setSelectedJob(null);
+    if (showAsPopup) {
+      onClose(); // Close the popup if it's shown as popup
+    } else {
+      setSelectedJob(null); // Go back to list if it's normal view
+    }
   };
 
   const handlePrint = () => {
@@ -244,10 +256,11 @@ const SlittingReports = ({ onClose }) => {
   // Show detailed report view
   if (selectedJob) {
     return (
-      <div className="slitting-detail-container">
+      <div className={showAsPopup ? "process-qc-overlay" : "slitting-detail-container"}>
+        <div className={showAsPopup ? "process-qc-container" : ""}>
         <div className="slitting-detail-header">
           <button className="back-btn" onClick={handleBackToList}>
-            ← Back to List
+            ← {showAsPopup ? 'Back to Process QC' : 'Back to List'}
           </button>
           <button className="print-btn" onClick={handlePrint}>
             Print Slitting Report
@@ -335,8 +348,14 @@ const SlittingReports = ({ onClose }) => {
             </table>
           </div>
         </div>
+        </div>
       </div>
     );
+  }
+
+  // If shown as popup but no job selected, close it
+  if (showAsPopup && !selectedJob) {
+    return null;
   }
 
   // Show job list view
