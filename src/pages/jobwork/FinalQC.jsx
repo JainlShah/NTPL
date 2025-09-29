@@ -122,22 +122,17 @@ const FinalQC = () => {
   const handleActionClick = (action, jobNo) => {
     console.log(`${action} clicked for job: ${jobNo}`);
     
+    const job = mockData.find(item => item.jobNo === jobNo);
+    
     if (action === 'processReport') {
-      const job = mockData.find(item => item.jobNo === jobNo);
       setSelectedJob(job);
       setShowProcessQCReport(true);
-    } else if (action === 'slittingReport') {
-      const job = mockData.find(item => item.jobNo === jobNo);
-      setSelectedJob(job);
-      setShowSlittingReports(true);
     } else if (action === 'processForm') {
-      const job = mockData.find(item => item.jobNo === jobNo);
       setSelectedJob(job);
       setShowProcessQCForm(true);
     } else if (action === 'slittingReport') {
-      const job = mockData.find(item => item.jobNo === jobNo);
       setSelectedSlittingJob(job);
-      setShowSlittingDetail(true);
+      setShowSlittingReports(true);
     }
     // Handle other actions here
   };
@@ -304,10 +299,12 @@ const FinalQC = () => {
       {showSlittingReports && (
         <SlittingReports
           jobData={selectedJob}
+          selectedJobNo={selectedSlittingJob?.jobNo}
           onClose={() => {
             setShowSlittingReports(false);
-            setSelectedJob(null);
+            setSelectedSlittingJob(null);
           }}
+          showAsPopup={true}
         />
       )}
 
@@ -323,17 +320,6 @@ const FinalQC = () => {
             setShowProcessQCForm(false);
             setSelectedJob(null);
           }}
-        />
-      )}
-
-      {showSlittingDetail && selectedSlittingJob && (
-        <SlittingReports
-          jobData={selectedSlittingJob}
-          onClose={() => {
-            setShowSlittingDetail(false);
-            setSelectedSlittingJob(null);
-          }}
-          showAsPopup={true}
         />
       )}
     </div>
