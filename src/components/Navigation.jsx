@@ -200,7 +200,7 @@ function Navigation() {
           path="/jobwork/slitting-report"
           element={
             <ProtectedRoute>
-              <SlittingReports onClose={() => window.history.back()} />
+              <SlittingReports />
             </ProtectedRoute>
           }
         />

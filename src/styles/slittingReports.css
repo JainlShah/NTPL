@@ -1,28 +1,143 @@
 /* Slitting Reports Styles */
-.slitting-reports-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  overflow-y: auto;
+.slitting-reports-container {
+  min-height: 100vh;
+  background-color: #ffffff;
   padding: 20px;
+  font-family: Arial, sans-serif;
 }
 
-.slitting-reports-container {
+/* Detailed Slitting Report View */
+.slitting-detail-container {
+  min-height: 100vh;
+  background-color: #ffffff;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.slitting-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.back-btn {
+  padding: 10px 20px;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #5a6268;
+  transform: translateY(-2px);
+}
+
+.print-btn {
+  padding: 10px 20px;
+  background-color: #13376F;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.print-btn:hover {
+  background-color: #0f2a5a;
+  transform: translateY(-2px);
+}
+
+/* Report Header Grid */
+.report-header-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border: 2px solid #dee2e6;
+  border-radius: 8px;
+}
+
+.header-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.header-label {
+  font-weight: 600;
+  color: #495057;
+  font-size: 0.85rem;
+}
+
+.header-value {
+  color: #212529;
+  font-weight: 500;
+  padding: 8px 12px;
+  background-color: #ffffff;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+/* Slitting Table */
+.slitting-table-container {
+  overflow-x: auto;
   background-color: #ffffff;
   border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  width: 95%;
-  max-width: 1400px;
-  max-height: 90vh;
-  overflow-y: auto;
-  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 2px solid #6c757d;
+  margin-bottom: 30px;
+}
+
+.slitting-detail-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.slitting-detail-table th {
+  background-color: #6c757d;
+  color: white;
+  padding: 15px 12px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+  border: 1px solid #495057;
+  white-space: nowrap;
+}
+
+.slitting-detail-table td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #dee2e6;
+  font-size: 0.9rem;
+  background-color: #f8f9fa;
+  vertical-align: middle;
+}
+
+.slitting-detail-table tbody tr:nth-child(even) td {
+  background-color: #ffffff;
+}
+
+.slitting-detail-table tbody tr:hover td {
+  background-color: #e3f2fd;
+}
+
+.slitting-detail-table .totals-row td {
+  background-color: #e9ecef !important;
+  font-weight: bold;
+  color: #13376F;
+  font-size: 1rem;
 }
 
 /* Search Section */
