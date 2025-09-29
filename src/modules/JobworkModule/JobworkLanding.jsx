@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const cardOptions = [
   { label: "Make New Jobwork", route: "/jobwork/new" },
   { label: "Jobwork Report", route: "/jobwork/report" },
+  {label}
   { label: "Final QC", route: "/jobwork/finalqc" },
   { label: "Process", route: "/jobwork/process" },
 ];
