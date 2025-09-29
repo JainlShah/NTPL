@@ -305,6 +305,10 @@
   .arrow-controls {
     display: none;
   }
+
+  .smart-arrow-controls {
+    display: none;
+  }
 }
 
 /* Responsive Design */

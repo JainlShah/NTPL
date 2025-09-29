@@ -19,19 +19,44 @@ const ProcessQCForm = ({ jobData, onClose, onSave }) => {
       employee: 'Danish'
     },
     tableData: [
-      { no: 1, length: 1375, width: 275, drawingWgt: 1375, processWgt: 1375, noStrip: 285.610, proStack: 304.67, obsThickness: 46, actualStrips: 230, actualWgt: 67.00, holePitch: 92.02, observedLength: 460, observedWidth: 135.73, burrL: 184.00 },
-      { no: 2, length: 1365, width: 265, drawingWgt: 1365, processWgt: 1365, noStrip: 137.980, proStack: 146.83, obsThickness: 23, actualStrips: 115, actualWgt: 33.00, holePitch: 46.02, observedLength: 230, observedWidth: 67.68, burrL: 66.00 },
-      { no: 3, length: 1355, width: 255, drawingWgt: 1355, processWgt: 1355, noStrip: 92.630, proStack: 98.29, obsThickness: 16, actualStrips: 80, actualWgt: 23.00, holePitch: 32.01, observedLength: 160, observedWidth: 47.22, burrL: 46.00 },
-      { no: 4, length: 1345, width: 245, drawingWgt: 1345, processWgt: 1345, noStrip: 72.440, proStack: 76.71, obsThickness: 13, actualStrips: 65, actualWgt: 19.00, holePitch: 26.01, observedLength: 130, observedWidth: 38.36, burrL: 38.00 },
-      { no: 5, length: 1325, width: 225, drawingWgt: 1325, processWgt: 1325, noStrip: 102.880, proStack: 108.43, obsThickness: 20, actualStrips: 100, actualWgt: 30.00, holePitch: 40.03, observedLength: 200, observedWidth: 59.04, burrL: 60.00 },
-      { no: 6, length: 1305, width: 205, drawingWgt: 1305, processWgt: 1305, noStrip: 75.360, proStack: 79.02, obsThickness: 14, actualStrips: 80, actualWgt: 23.00, holePitch: 32.01, observedLength: 160, observedWidth: 47.22, burrL: 46.00 },
-      { no: 7, length: 1285, width: 185, drawingWgt: 1285, processWgt: 1285, noStrip: 55.490, proStack: 57.92, obsThickness: 13, actualStrips: 65, actualWgt: 19.00, holePitch: 26.01, observedLength: 130, observedWidth: 38.36, burrL: 38.00 },
-      { no: 8, length: 1265, width: 165, drawingWgt: 1265, processWgt: 1265, noStrip: 42.160, proStack: 43.78, obsThickness: 11, actualStrips: 55, actualWgt: 16.00, holePitch: 22.04, observedLength: 110, observedWidth: 32.51, burrL: 32.00 },
-      { no: 9, length: 1245, width: 145, drawingWgt: 1245, processWgt: 1245, noStrip: 30.400, proStack: 31.43, obsThickness: 9, actualStrips: 45, actualWgt: 13.00, holePitch: 18.01, observedLength: 90, observedWidth: 26.56, burrL: 26.00 },
-      { no: 10, length: 1215, width: 115, drawingWgt: 1215, processWgt: 1215, noStrip: 28.660, proStack: 30.67, obsThickness: 11, actualStrips: 55, actualWgt: 16.00, holePitch: 22.01, observedLength: 110, observedWidth: 32.46, burrL: 32.00 },
-      { no: 11, length: 1185, width: 85, drawingWgt: 1185, processWgt: 1185, noStrip: 18.070, proStack: 14.35, obsThickness: 7, actualStrips: 35, actualWgt: 11.00, holePitch: 14.02, observedLength: 70, observedWidth: 20.68, burrL: 22.00 }
+      { no: 1, length: 715, width: 160, drawingWgt: 46.98, processWgt: 46.50, noStrip: 366, proStack: 71.30, obsThickness: '', actualStrips: '', actualWgt: '', holePitch: '', observedLength: '', observedWidth: '', burr: '', remark: '' },
+      { no: 2, length: 700, width: 150, drawingWgt: 36.61, processWgt: 36.53, noStrip: 307, proStack: 59.80, obsThickness: '', actualStrips: '', actualWgt: '', holePitch: '', observedLength: '', observedWidth: '', burr: '', remark: '' },
+      { no: 3, length: 685, width: 140, drawingWgt: 23.44, processWgt: 23.41, noStrip: 212, proStack: 41.40, obsThickness: '', actualStrips: '', actualWgt: '', holePitch: '', observedLength: '', observedWidth: '', burr: '', remark: '' },
+      { no: 4, length: 670, width: 130, drawingWgt: 14.38, processWgt: 14.32, noStrip: 142, proStack: 27.61, obsThickness: '', actualStrips: '', actualWgt: '', holePitch: '', observedLength: '', observedWidth: '', burr: '', remark: '' },
+      { no: 5, length: 655, width: 120, drawingWgt: 10.96, processWgt: 10.87, noStrip: 118, proStack: 23.01, obsThickness: '', actualStrips: '', actualWgt: '', holePitch: '', observedLength: '', observedWidth: '', burr: '', remark: '' },
+      { no: 6, length: 640, width: 110, drawingWgt: 7.96, processWgt: 7.93, noStrip: 94, proStack: 18.40, obsThickness: '', actualStrips: '', actualWgt: '', holePitch: '', observedLength: '', observedWidth: '', burr: '', remark: '' },
+      { no: 7, length: 625, width: 100, drawingWgt: 7.17, processWgt: 7.14, noStrip: 94, proStack: 18.40, obsThickness: '', actualStrips: '', actualWgt: '', holePitch: '', observedLength: '', observedWidth: '', burr: '', remark: '' },
+      { no: 8, length: 610, width: 90, drawingWgt: 4.79, processWgt: 4.74, noStrip: 71, proStack: 13.79, obsThickness: '', actualStrips: '', actualWgt: '', holePitch: '', observedLength: '', observedWidth: '', burr: '', remark: '' },
+      { no: 9, length: 595, width: 80, drawingWgt: 4.22, processWgt: 4.17, noStrip: 71, proStack: 13.80, obsThickness: '', actualStrips: '', actualWgt: '', holePitch: '', observedLength: '', observedWidth: '', burr: '', remark: '' },
+      { no: 10, length: 580, width: 70, drawingWgt: 2.44, processWgt: 2.43, noStrip: 47, proStack: 9.21, obsThickness: '', actualStrips: '', actualWgt: '', holePitch: '', observedLength: '', observedWidth: '', burr: '', remark: '' },
+      { no: 11, length: 565, width: 60, drawingWgt: 2.07, processWgt: 2.06, noStrip: 47, proStack: 9.21, obsThickness: '', actualStrips: '', actualWgt: '', holePitch: '', observedLength: '', observedWidth: '', burr: '', remark: '' }
     ]
   });
+
+  // Smart calculation logic for related fields
+  const calculateRelatedFields = (rowIndex, baseField, newValue) => {
+    const row = formData.tableData[rowIndex];
+    const updatedRow = { ...row };
+    
+    if (baseField === 'actualStrips') {
+      // When actual strips change, update related fields
+      updatedRow.actualStrips = newValue;
+      // Calculate actual weight based on strips (example logic)
+      updatedRow.actualWgt = (newValue * 0.29).toFixed(2);
+      // Calculate hole pitch based on strips
+      updatedRow.holePitch = (newValue * 0.4).toFixed(2);
+      // Calculate observed length and width
+      updatedRow.observedLength = newValue * 2;
+      updatedRow.observedWidth = (newValue * 0.29).toFixed(2);
+    } else if (baseField === 'proStack') {
+      // When pro stack changes, update related fields
+      updatedRow.proStack = newValue;
+      // Update observed thickness based on stack
+      updatedRow.obsThickness = Math.round(newValue * 0.65);
+    }
+    
+    return updatedRow;
+  };
 
   const handleInputChange = (rowIndex, field, value) => {
     setFormData(prev => ({
@@ -42,11 +67,30 @@ const ProcessQCForm = ({ jobData, onClose, onSave }) => {
     }));
   };
 
-  const handleArrowClick = (rowIndex, field, direction) => {
+  const handleSmartArrowClick = (rowIndex, direction) => {
     const increment = direction === 'up' ? 1 : -1;
-    const currentValue = formData.tableData[rowIndex][field] || 0;
+    const currentRow = formData.tableData[rowIndex];
+    
+    // Determine which field to modify based on current context
+    // Priority: actualStrips > proStack
+    let primaryField = 'actualStrips';
+    let currentValue = currentRow.actualStrips || 0;
+    
+    // If actualStrips is 0 or empty, use proStack
+    if (currentValue === 0) {
+      primaryField = 'proStack';
+      currentValue = currentRow.proStack || 0;
+    }
+    
     const newValue = Math.max(0, currentValue + increment);
-    handleInputChange(rowIndex, field, newValue);
+    const updatedRow = calculateRelatedFields(rowIndex, primaryField, newValue);
+    
+    setFormData(prev => ({
+      ...prev,
+      tableData: prev.tableData.map((row, index) => 
+        index === rowIndex ? updatedRow : row
+      )
+    }));
   };
 
   const calculateTotals = () => {
@@ -56,7 +100,8 @@ const ProcessQCForm = ({ jobData, onClose, onSave }) => {
       noStrip: totals.noStrip + (row.noStrip || 0),
       proStack: totals.proStack + (row.proStack || 0),
       actualStrips: totals.actualStrips + (row.actualStrips || 0),
-      actualWgt: totals.actualWgt + (row.actualWgt || 0)
+      actualWgt: totals.actualWgt + (row.actualWgt || 0),
+      burr: totals.burr + (row.burr || 0)
     }), { drawingWgt: 0, processWgt: 0, noStrip: 0, proStack: 0, actualStrips: 0, actualWgt: 0 });
   };
 
@@ -223,9 +268,15 @@ const ProcessQCForm = ({ jobData, onClose, onSave }) => {
                   <th>Actual Strips</th>
                   <th>Actual Wgt.</th>
                   <th>Hole Pitch</th>
-                  <th>Observed Length</th>
-                  <th>Observed Width</th>
+                  <th colSpan="2">Observed</th>
                   <th>Burr L (micron)</th>
+                  <th>Remark/Operator</th>
+                </tr>
+                <tr>
+                  <th colSpan="10"></th>
+                  <th>Length</th>
+                  <th>Width</th>
+                  <th colSpan="2"></th>
                 </tr>
               </thead>
               <tbody>
@@ -274,31 +325,13 @@ const ProcessQCForm = ({ jobData, onClose, onSave }) => {
                       />
                     </td>
                     <td>
-                      <div className="input-with-arrows">
-                        <input
-                          type="number"
-                          step="0.01"
-                          value={row.proStack}
-                          onChange={(e) => handleInputChange(index, 'proStack', e.target.value)}
-                          className="form-input"
-                        />
-                        <div className="arrow-controls">
-                          <button
-                            type="button"
-                            className="arrow-btn up"
-                            onClick={() => handleArrowClick(index, 'proStack', 'up')}
-                          >
-                            ▲
-                          </button>
-                          <button
-                            type="button"
-                            className="arrow-btn down"
-                            onClick={() => handleArrowClick(index, 'proStack', 'down')}
-                          >
-                            ▼
-                          </button>
-                        </div>
-                      </div>
+                      <input
+                        type="number"
+                        step="0.01"
+                        value={row.proStack}
+                        onChange={(e) => handleInputChange(index, 'proStack', e.target.value)}
+                        className="form-input"
+                      />
                     </td>
                     <td>
                       <input
@@ -309,30 +342,12 @@ const ProcessQCForm = ({ jobData, onClose, onSave }) => {
                       />
                     </td>
                     <td>
-                      <div className="input-with-arrows">
-                        <input
-                          type="number"
-                          value={row.actualStrips}
-                          onChange={(e) => handleInputChange(index, 'actualStrips', e.target.value)}
-                          className="form-input"
-                        />
-                        <div className="arrow-controls">
-                          <button
-                            type="button"
-                            className="arrow-btn up"
-                            onClick={() => handleArrowClick(index, 'actualStrips', 'up')}
-                          >
-                            ▲
-                          </button>
-                          <button
-                            type="button"
-                            className="arrow-btn down"
-                            onClick={() => handleArrowClick(index, 'actualStrips', 'down')}
-                          >
-                            ▼
-                          </button>
-                        </div>
-                      </div>
+                      <input
+                        type="number"
+                        value={row.actualStrips}
+                        onChange={(e) => handleInputChange(index, 'actualStrips', e.target.value)}
+                        className="form-input"
+                      />
                     </td>
                     <td>
                       <input
@@ -361,21 +376,50 @@ const ProcessQCForm = ({ jobData, onClose, onSave }) => {
                       />
                     </td>
                     <td>
-                      <input
-                        type="number"
-                        step="0.01"
-                        value={row.observedWidth}
-                        onChange={(e) => handleInputChange(index, 'observedWidth', e.target.value)}
-                        className="form-input"
-                      />
+                      <div className="input-with-smart-arrows">
+                        <input
+                          type="number"
+                          step="0.01"
+                          value={row.observedWidth}
+                          onChange={(e) => handleInputChange(index, 'observedWidth', e.target.value)}
+                          className="form-input"
+                        />
+                        <div className="smart-arrow-controls">
+                          <button
+                            type="button"
+                            className="smart-arrow-btn up"
+                            onClick={() => handleSmartArrowClick(index, 'up')}
+                            title="Increase values and update related fields"
+                          >
+                            ▲
+                          </button>
+                          <button
+                            type="button"
+                            className="smart-arrow-btn down"
+                            onClick={() => handleSmartArrowClick(index, 'down')}
+                            title="Decrease values and update related fields"
+                          >
+                            ▼
+                          </button>
+                        </div>
+                      </div>
                     </td>
                     <td>
                       <input
                         type="number"
                         step="0.01"
-                        value={row.burrL}
-                        onChange={(e) => handleInputChange(index, 'burrL', e.target.value)}
+                        value={row.burr}
+                        onChange={(e) => handleInputChange(index, 'burr', e.target.value)}
                         className="form-input"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        value={row.remark}
+                        onChange={(e) => handleInputChange(index, 'remark', e.target.value)}
+                        className="form-input"
+                        placeholder="Remark/Operator"
                       />
                     </td>
                   </tr>
@@ -383,9 +427,7 @@ const ProcessQCForm = ({ jobData, onClose, onSave }) => {
                 
                 {/* Total Row */}
                 <tr className="totals-row">
-                  <td><strong>Total</strong></td>
-                  <td></td>
-                  <td></td>
+                  <td colSpan="3"><strong>Total</strong></td>
                   <td><strong>{totals.drawingWgt.toFixed(2)}</strong></td>
                   <td><strong>{totals.processWgt.toFixed(2)}</strong></td>
                   <td><strong>{totals.noStrip.toFixed(3)}</strong></td>
@@ -393,29 +435,9 @@ const ProcessQCForm = ({ jobData, onClose, onSave }) => {
                   <td></td>
                   <td><strong>{totals.actualStrips}</strong></td>
                   <td><strong>{totals.actualWgt.toFixed(2)}</strong></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td><strong>{totals.burrL ? totals.burrL.toFixed(2) : '0.00'}</strong></td>
+                  <td colSpan="5"></td>
                 </tr>
 
-                {/* Grand Total Row */}
-                <tr className="grand-totals-row">
-                  <td><strong>Grand Total</strong></td>
-                  <td></td>
-                  <td></td>
-                  <td><strong>2461.000</strong></td>
-                  <td><strong>2549.760</strong></td>
-                  <td><strong>466</strong></td>
-                  <td><strong>2316</strong></td>
-                  <td></td>
-                  <td><strong>679.85</strong></td>
-                  <td><strong>592.452</strong></td>
-                  <td><strong>4625</strong></td>
-                  <td></td>
-                  <td></td>
-                  <td><strong>546.02</strong></td>
-                </tr>
               </tbody>
             </table>
           </div>
