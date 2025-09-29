@@ -24,6 +24,7 @@ import ReportDashboard from "../pages/report/dashboard.jsx";
 import JobworkLanding from '../modules/JobworkModule/JobworkLanding.jsx';
 import MakeJobwork from '../modules/JobworkModule/MakeJobwork.jsx';
 import FinalQC from '../pages/jobwork/FinalQC.jsx';
+import SlittingReports from '../pages/jobwork/SlittingReports.jsx';
 function Navigation() {
   return (
     <BrowserRouter>
@@ -191,6 +192,14 @@ function Navigation() {
           element={
             <ProtectedRoute>
               <FinalQC />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/jobwork/slitting-report"
+          element={
+            <ProtectedRoute>
+              <SlittingReports onClose={() => window.history.back()} />
             </ProtectedRoute>
           }
         />
