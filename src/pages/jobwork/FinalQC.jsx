@@ -12,6 +12,8 @@ const FinalQC = () => {
   const [showSlittingReports, setShowSlittingReports] = useState(false);
   const [showProcessQCForm, setShowProcessQCForm] = useState(false);
   const [selectedJob, setSelectedJob] = useState(null);
+  const [showSlittingDetail, setShowSlittingDetail] = useState(false);
+  const [selectedSlittingJob, setSelectedSlittingJob] = useState(null);
   
   // Mock data based on the image
   const mockData = [
@@ -132,6 +134,10 @@ const FinalQC = () => {
       const job = mockData.find(item => item.jobNo === jobNo);
       setSelectedJob(job);
       setShowProcessQCForm(true);
+    } else if (action === 'slittingReport') {
+      const job = mockData.find(item => item.jobNo === jobNo);
+      setSelectedSlittingJob(job);
+      setShowSlittingDetail(true);
     }
     // Handle other actions here
   };
@@ -317,6 +323,17 @@ const FinalQC = () => {
             setShowProcessQCForm(false);
             setSelectedJob(null);
           }}
+        />
+      )}
+
+      {showSlittingDetail && selectedSlittingJob && (
+        <SlittingReports
+          jobData={selectedSlittingJob}
+          onClose={() => {
+            setShowSlittingDetail(false);
+            setSelectedSlittingJob(null);
+          }}
+          showAsPopup={true}
         />
       )}
     </div>
