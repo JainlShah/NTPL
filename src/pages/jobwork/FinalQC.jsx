@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ProcessQCReport from './ProcessQCReport';
+import SlittingReports from './SlittingReports';
 import '../../styles/finalQC.css';
 
 const FinalQC = () => {
@@ -7,6 +8,7 @@ const FinalQC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [filters, setFilters] = useState({});
   const [showProcessQCReport, setShowProcessQCReport] = useState(false);
+  const [showSlittingReports, setShowSlittingReports] = useState(false);
   const [selectedJob, setSelectedJob] = useState(null);
   
   // Mock data based on the image
@@ -120,6 +122,10 @@ const FinalQC = () => {
       const job = mockData.find(item => item.jobNo === jobNo);
       setSelectedJob(job);
       setShowProcessQCReport(true);
+    } else if (action === 'slittingReport') {
+      const job = mockData.find(item => item.jobNo === jobNo);
+      setSelectedJob(job);
+      setShowSlittingReports(true);
     }
     // Handle other actions here
   };
@@ -278,6 +284,16 @@ const FinalQC = () => {
           jobData={selectedJob}
           onClose={() => {
             setShowProcessQCReport(false);
+            setSelectedJob(null);
+          }}
+        />
+      )}
+
+      {showSlittingReports && (
+        <SlittingReports
+          jobData={selectedJob}
+          onClose={() => {
+            setShowSlittingReports(false);
             setSelectedJob(null);
           }}
         />
