@@ -277,21 +277,9 @@ const JobworkReport = () => {
       <div className="jobcard-report-container">
         {/* Header */}
         <div className="jobcard-header">
-          <div className="header-left">
-            <button className="logout-btn">Logout</button>
-          </div>
+          
           <div className="header-center">
             <h1>Jobcard Report</h1>
-          </div>
-          <div className="header-right">
-            <span className="welcome-text">Welcome Danish</span>
-            <div className="header-actions">
-              <button className="header-action-btn">Edit widths</button>
-              <span>|</span>
-              <button className="header-action-btn">Edit Material Type</button>
-              <span>|</span>
-              <button className="header-action-btn" onClick={handlePrint}>Print</button>
-            </div>
           </div>
         </div>
 
