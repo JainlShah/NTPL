@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import '../../styles/processQCReport.css';
 
 const ProcessQCReport = ({ jobData, onClose }) => {
-  const [currentSection, setCurrentSection] = useState('outer');
-
   // Mock data based on the images
   const reportData = {
     header: {
@@ -84,16 +82,6 @@ const ProcessQCReport = ({ jobData, onClose }) => {
       totals: { drawingWgt: 188.37, processWgt: 197.87, noStrip: 1569, proStack: 305.89, actualStrips: 0, actualWgt: 0 },
       grandTotal: { drawingWgt: 419.63, processWgt: 438.41, noStrip: 3920, proStack: 764.47, actualStrips: 0, actualWgt: 0 }
     }
-  };
-
-  const sections = [
-    { key: 'outer', label: 'Outer Limb Plate', data: reportData.outerLimbPlate },
-    { key: 'center', label: 'Center Limb Plate', data: reportData.centerLimbPlate },
-    { key: 'yoke', label: 'Yoke Limb Plates', data: reportData.yokeLimbPlates }
-  ];
-
-  const handleSectionChange = (sectionKey) => {
-    setCurrentSection(sectionKey);
   };
 
   const handleInputChange = (rowIndex, field, value) => {
@@ -314,27 +302,12 @@ const ProcessQCReport = ({ jobData, onClose }) => {
           </div>
         </div>
 
-        {/* Section Navigation */}
-        <div className="section-tabs">
-          {sections.map((section) => (
-            <button
-              key={section.key}
-              className={`section-tab ${currentSection === section.key ? 'active' : ''}`}
-              onClick={() => handleSectionChange(section.key)}
-            >
-              {section.label}
-            </button>
-          ))}
+        {/* All Sections in One Scrollable Page */}
+        <div className="all-sections-container">
+          {renderTable(reportData.outerLimbPlate)}
+          {renderTable(reportData.centerLimbPlate)}
+          {renderTable(reportData.yokeLimbPlates)}
         </div>
-
-        {/* Current Section Table */}
-        {sections.map((section) => (
-          currentSection === section.key && (
-            <div key={section.key}>
-              {renderTable(section.data)}
-            </div>
-          )
-        ))}
 
         {/* Action Buttons */}
         <div className="qc-actions">
