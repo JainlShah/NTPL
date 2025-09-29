@@ -281,6 +281,12 @@ const JobworkReport = () => {
           <div className="header-center">
             <h1>Jobcard Report</h1>
           </div>
+          <div className="header-right">
+            <div className="header-actions">
+              
+              <button className="header-action-btn" onClick={handlePrint}>Print</button>
+            </div>
+          </div>
         </div>
 
         {/* Job Details Grid */}
